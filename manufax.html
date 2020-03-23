@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .wrap {
+            width: 100%;
+        }
+
+        .connection {
+            width: 100%;
+            /* height: 40.32px; */
+            color: white;
+            background-color: black;
+            display: flex;
+            padding-top: 20px;
+            padding-bottom: 5px;
+
+        }
+
+        .phone {
+            padding-left: 15px;
+        }
+
+        .phone a {
+            padding-left: 15px;
+        }
+
+
+        .address {
+            display: flex;
+            padding-left: 75px;
+            padding-right: 20px;
+
+        }
+
+        .address p {
+            padding-left: 15px;
+
+        }
+
+        .social {
+            margin-left: 550px;
+        }
+
+        .OurProject {
+            width: 100%;
+            display: flex;
+            padding-top: 0px;
+
+        }
+
+        .proBack {
+            position: absolute;
+            top: 0px;
+            z-index: -1;
+        }
+
+        .logo {
+            position: absolute;
+            top: 80px;
+            left: 60px;
+
+        }
+
+        .HeadList {
+            position: absolute;
+            top: 110px;
+            left: 550px;
+            color: white;
+            display: flex;
+        }
+
+        .HeadList a {
+            color: white;
+            padding-right: 30px;
+        }
+
+        .find {
+            position: absolute;
+            top: 95px;
+            right: 50px;
+        }
+
+        .Bigtitle {
+            position: absolute;
+            color: white;
+            top: 425px;
+            left: 500px;
+        }
+
+        /* .showprojects input{
+             position:relative;
+             left:-150000px ;
+             display: inline-block;
+
+         }  */
+        .ServicesContainer {
+            width: 100%;
+            height: 950px;
+            background-color: yellow;
+            margin: 0 auto;
+
+        }
+
+        .ServicesTitle {
+            position: relative;
+            height: 41px;
+            top: 147px;
+            text-align: center;
+            background-color: brown;
+        }
+
+        .building {
+            width: 410.37px;
+            height: 299.65px;
+            position: relative;
+            top: 170px;
+            left: 50px;
+            background-color: crimson;
+        }
+
+        .cons {
+            width: 410.37px;
+            height: 299.65px;
+            position: relative;
+            top: -127px;
+            left: 550px;
+            background-color: blue;
+        }
+
+        .PRE {
+            width: 410.37px;
+            height: 299.65px;
+            position: relative;
+            top: -425px;
+            left: 1050px;
+            background-color: green;
+        }
+
+        .desing {
+            width: 410.37px;
+            height: 299.65px;
+            background-color: indigo;
+            position: relative;
+            top: -350px;
+            left: 50px;
+        }
+
+        .conm {
+            width: 410.37px;
+            height: 299.65px;
+            background-color: red;
+            position: relative;
+            top: -650px;
+            left: 550px;
+        }
+
+        .general {
+            width: 410.37px;
+            height: 299.65px;
+            background-color: rgb(27, 143, 27);
+            position: relative;
+            top: -950px;
+            left: 1050px;
+        }
+
+        .HistoryContainer {
+            width: 100%;
+            height: 650px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .HistoryContainer h1 {
+            position: relative;
+            top: 100px;
+            left: 50px;
+        }
+
+        .HistoryContainer h3 {
+            position: relative;
+            width: 610px;
+            top: 150px;
+            left: 50px;
+        }
+
+        .HistoryContainer p {
+            position: relative;
+            width: 610px;
+            top: 200px;
+            left: 50px;
+        }
+
+        .HistoryContainer img {
+            position: relative;
+            top: -100px;
+            left: 800px;
+        }
+
+        .HistoryContainer button {
+            width: 200px;
+            height: 50px;
+            position: relative;
+            top: -100px;
+            left: -550px;
+        }
+
+        .BuildingProject {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aquamarine;
+        }
+
+        .BuildingProjectContainer {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .commercialpic {
+            width: 25%;
+            position: relative;
+            text-align: center;
+        }
+
+        .commercialpic img {
+            width: 100%;
+            height: 358px;
+            object-fit: cover;
+
+        }
+
+        .commercialtxt {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .commercialtxt h2 {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 45%;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .culturalPic {
+            width: 25%;
+            position: relative;
+            text-align: center;
+        }
+
+        .culturalPic img {
+            width: 100%;
+            height: 358px;
+            object-fit: cover;
+        }
+
+        .culturalPictxt {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .culturalPictxt h2 {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 45%;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 400;
+
+        }
+
+        .datapic {
+            width: 25%;
+            position: relative;
+            text-align: center;
+        }
+
+        .datapic img {
+            width: 100%;
+            height: 358px;
+            object-fit: cover;
+        }
+
+        .datatext {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .datatxt h2 {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 45%;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .educationalpic {
+            width: 25%;
+            position: relative;
+            text-align: center;
+        }
+
+        .educationalpic img {
+            width: 100%;
+            height: 358px;
+            object-fit: cover;
+        }
+
+        .educationaltxt {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .educationaltxt h2 {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 45%;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap">
+
+        <div class="connection">
+            <div class="address">
+                <img src="manufax/map.png" title="10*15" width="10" height="15">
+                <p>Addeess:4578 Marmora Road,Glasgow,D04 89GR</p>
+            </div>
+
+            <div class="phone">
+                <img src="manufax/phone.png" title="10*10" width="10" height="10">
+                <a href="tel:800-123-0045 800-123-0045"
+                    style="text-decoration:none;color: white;">Phones:(800)123-0045;(800)123-0046</a>
+            </div>
+
+            <div class="social">
+                <img src="manufax/fb.jpg" alt="">
+                <img src="manufax/twitterjpg.jpg" alt="">
+                <img src="manufax/vlogjpg.jpg" alt="">
+                <img src="manufax/yt.jpg" alt="">
+                <img src="manufax/tree.jpg" alt="">
+                <img src="manufax/ig.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="OurProject">
+            <div class="ProBack"></div>
+            <img src="manufax/ProjectBack.png" width="1498.89" height="950">
+
+
+            <div class="logo">
+                <img src="manufax/logo.png" alt="">
+            </div>
+
+            <div class="HeadList">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACTS</a></li>
+            </div>
+            <div class="find">
+                <img src="manufax/find.png" width="50" height="50">
+            </div>
+            <div class="Bigtitle">
+                <h1>S U M M E R D I S C O U N T S</h1>
+                <h2>SUMMER DISCOUNTS FOR BIG CONSTRUCTION PROJECTS</h2>
+            </div>
+            <!-- <div showprojects>
+            <input type="button" value="SEE OUR RECENT PROJECTS" onclick="#">
+            
+        </div> -->
+
+        </div>
+
+
+        <div class="ServicesContainer">
+            <div class="ServicesTitle">
+                <h1>OUR SERVICES</h1>
+            </div>
+            <div class="building">
+                <img src="manufax/build.png" alt="">
+                <h2>BUILDING INFORMATION MODELING</h2>
+                <p>Oftentimes physical and functional essence of any construction project needs to be represented
+                    digitally, in a 3D model format. In...</p>
+            </div>
+            <div class="cons">
+                <img src="manufax/CONSTRUCTION SERVICES.png" alt="">
+                <h2>CONSTRUCTION SERVICES</h2>
+                <p>Our customers love the pace/quality tempo that we show during each of the principal construction
+                    processes! We're comfortable with any...</p>
+            </div>
+
+            <div class="PRE">
+                <img src="manufax/PRE-CONSTRUCTION SERVICES.png" alt="">
+                <h2>PRE-CONSTRUCTION SERVICES</h2>
+                <p>We take our time on initial planning before any construction begins, to balance all the financial and
+                    efficiency issues beforehand.This...</p>
+            </div>
+            <div class="desing">
+                <img src="manufax/DESIGN-BUILD.png" alt="">
+                <h2>DESIGN-BUILD</h2>
+                <p>If a project is not too complex, we may hire a designer-builder type of contractor, to make the
+                    longevity of...</p>
+            </div>
+            <div class="conm">
+                <img src="manufax/CONSTRUCTION MANAGEMENT.png" alt="">
+                <h2>CONSTRUCTION MANAGEMENT</h2>
+                <p>Construction project management is essential. We're using the most time and iterations efficient life
+                    cycles for that.As you may know</p>
+            </div>
+            <div class="general">
+                <img src="manufax/GENERAL CONTRACTING.png" alt="">
+                <h2>GENERAL CONTRACTING</h2>
+                <p>We have a long list of professional contractors, whom our engineers and architects enjoy to work with
+                    on a majority...</p>
+            </div>
+
+        </div>
+
+        <div class="HistoryContainer">
+            <h1>OUR HISTORY</h1>
+            <h3>OUR CONSTRUCTION COMPANY HAS BEEN FOUNDED 10 YEARS AGO, AT THE VERY PEAK OF THE BUILDING FRENZY IN THE
+                US…</h3>
+            <p>Since then we’ve built hundreds of commercial, government and private buildings and facilities. It may
+                not sound like a lot, but if you estimate the manpower, working hours, materials, planning and
+                correlating that were all involved in completing each separate project, then our productivity is
+                immense!</p>
+            <img src="manufax/history.png" alt="">
+            <button style="background-color: aquamarine;">READ MORE</button>
+        </div>
+
+        <div class="BuildingProject">
+
+            <div class="BuildingProjectContainer">
+
+                <div class="commercialpic">
+                    <img src="manufax/commercial.jpeg" alt="">
+               
+                <div class="commercialtxt">
+                    <h2>COMMERCIAL</h2>
+                </div> </div>
+
+                <div class="culturalPic">
+                    <img src="manufax/CULTURAL .jpeg" alt="">
+
+                    <div class="culturalPictxt">
+                        <h2>CULTURAL / LIFESTYLE</h2>
+                    </div>
+                </div>
+
+                <div class="datapic">
+                    <img src="manufax/DATA  .jpeg" alt="">
+               
+                <div class="datatxt">
+                    <h2>DATA / TECHNOLOGY</h2>
+                </div> </div>
+
+                <div class="educationalpic">
+                    <img src="manufax/EDUCATIONAL.jpeg" alt="">
+
+                <div class="educationaltxt">
+                    <h2>EDUCATIONAL</h2>
+                </div></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
