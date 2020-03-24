@@ -7,7 +7,7 @@
     <title>Document</title>
     <style type="text/css">
         * {
-            margin: 0px;
+            margin: 0;
             padding: 0;
             list-style: none;
             text-decoration: none;
@@ -55,15 +55,21 @@
 
         .OurProject {
             width: 100%;
+            height: 950px;
             display: flex;
             padding-top: 0px;
 
+            /* background-color: pink; */
+
         }
 
-        .proBack {
-            position: absolute;
-            top: 0px;
-            z-index: -1;
+        .ProBack img {
+            position: relative;
+            ;
+            width: 100%;
+            height: 950px;
+            padding-top: 0px;
+            z-index: 0;
         }
 
         .logo {
@@ -97,6 +103,7 @@
             color: white;
             top: 425px;
             left: 500px;
+
         }
 
         /* .showprojects input{
@@ -108,7 +115,7 @@
         .ServicesContainer {
             width: 100%;
             height: 950px;
-            background-color: yellow;
+            /* background-color: yellow; */
             margin: 0 auto;
 
         }
@@ -118,7 +125,7 @@
             height: 41px;
             top: 147px;
             text-align: center;
-            background-color: brown;
+            /* background-color: brown; */
         }
 
         .building {
@@ -127,7 +134,7 @@
             position: relative;
             top: 170px;
             left: 50px;
-            background-color: crimson;
+            /* background-color: crimson; */
         }
 
         .cons {
@@ -136,7 +143,7 @@
             position: relative;
             top: -127px;
             left: 550px;
-            background-color: blue;
+            /* background-color: blue; */
         }
 
         .PRE {
@@ -145,13 +152,13 @@
             position: relative;
             top: -425px;
             left: 1050px;
-            background-color: green;
+            /* background-color: green; */
         }
 
         .desing {
             width: 410.37px;
             height: 299.65px;
-            background-color: indigo;
+            /* background-color: indigo; */
             position: relative;
             top: -350px;
             left: 50px;
@@ -160,7 +167,7 @@
         .conm {
             width: 410.37px;
             height: 299.65px;
-            background-color: red;
+            /* background-color: red; */
             position: relative;
             top: -650px;
             left: 550px;
@@ -169,7 +176,7 @@
         .general {
             width: 410.37px;
             height: 299.65px;
-            background-color: rgb(27, 143, 27);
+            /* background-color: rgb(27, 143, 27); */
             position: relative;
             top: -950px;
             left: 1050px;
@@ -178,7 +185,7 @@
         .HistoryContainer {
             width: 100%;
             height: 650px;
-            background-color: pink;
+            background-color: gray;
             margin: 0 auto;
         }
 
@@ -186,6 +193,7 @@
             position: relative;
             top: 100px;
             left: 50px;
+
         }
 
         .HistoryContainer h3 {
@@ -221,7 +229,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: aquamarine;
+            /* background-color: aquamarine; */
         }
 
         .BuildingProjectContainer {
@@ -230,27 +238,21 @@
 
         }
 
-        .commercialpic {
+        .commercial {
             width: 25%;
             position: relative;
             text-align: center;
         }
 
-        .commercialpic img {
+        .commercial img {
             width: 100%;
             height: 358px;
             object-fit: cover;
 
         }
 
-        .commercialtxt {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-        }
 
-        .commercialtxt h2 {
+        .commercial h2 {
             position: absolute;
             right: 0;
             left: 0;
@@ -260,26 +262,20 @@
             font-weight: 400;
         }
 
-        .culturalPic {
+        .cultural {
             width: 25%;
             position: relative;
             text-align: center;
         }
 
-        .culturalPic img {
+        .cultural img {
             width: 100%;
             height: 358px;
             object-fit: cover;
         }
 
-        .culturalPictxt {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-        }
 
-        .culturalPictxt h2 {
+        .cultural h2 {
             position: absolute;
             right: 0;
             left: 0;
@@ -290,26 +286,20 @@
 
         }
 
-        .datapic {
+        .data {
             width: 25%;
             position: relative;
             text-align: center;
         }
 
-        .datapic img {
+        .data img {
             width: 100%;
             height: 358px;
             object-fit: cover;
         }
 
-        .datatext {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-        }
 
-        .datatxt h2 {
+        .data h2 {
             position: absolute;
             right: 0;
             left: 0;
@@ -319,26 +309,20 @@
             font-weight: 400;
         }
 
-        .educationalpic {
+        .educational {
             width: 25%;
             position: relative;
             text-align: center;
         }
 
-        .educationalpic img {
+        .educational img {
             width: 100%;
             height: 358px;
             object-fit: cover;
         }
 
-        .educationaltxt {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-        }
 
-        .educationaltxt h2 {
+        .educational h2 {
             position: absolute;
             right: 0;
             left: 0;
@@ -346,6 +330,294 @@
             text-transform: uppercase;
             color: #fff;
             font-weight: 400;
+        }
+
+        .government {
+            width: 25%;
+            position: relative;
+            text-align: center;
+        }
+
+        .government img {
+            width: 100%;
+            height: 358px;
+            object-fit: cover;
+        }
+
+        .government h2 {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 45%;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .healthcare {
+            width: 25%;
+            position: relative;
+            text-align: center;
+
+        }
+
+        .healthcare img {
+            width: 100%;
+            height: 358px;
+            object-fit: cover;
+        }
+
+        .healthcare h2 {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 45%;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .manufacturing {
+            width: 25%;
+            position: relative;
+            text-align: center;
+
+        }
+
+        .manufacturing img {
+            width: 100%;
+            height: 358px;
+            object-fit: cover;
+        }
+
+        .manufacturing h2 {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 45%;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .warehouse {
+
+            width: 25%;
+            position: relative;
+            text-align: center;
+        }
+
+        .warehouse img {
+            width: 100%;
+            height: 358px;
+            object-fit: cover;
+        }
+
+        .warehouse h2 {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 45%;
+            text-transform: uppercase;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .RecentnewsCantainer {
+
+            width: 100%;
+
+        }
+
+        .newstitle {
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 62px;
+            margin-bottom: 45px;
+            font-weight: 900;
+            position: relative;
+        }
+
+
+
+        .newstitle h2::before {
+            content: '';
+            width: 66px;
+            height: 1px;
+            border-top: 2px solid #0bf;
+            position: absolute;
+            top: -25px;
+            right: 0;
+            left: 0;
+            margin: auto;
+
+        }
+
+        .allnewsitem {
+            display: flex;
+            width: 100%;
+            padding-left: 20px;
+        }
+
+        .newsitem1 {
+            width: 30%;
+            padding: 0 1.5%;
+            margin-bottom: 50px;
+        }
+
+
+        .newsitem1 img {
+            width: 100%;
+        }
+
+        .newsitem1 h3 {
+            color: #000;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+
+
+        .newsitem1 .date1 p {
+            font-size: 14px;
+            font-weight: 200;
+            color: #aaa;
+
+
+        }
+
+        .newsitem1 .date2 {
+            width: 116px;
+            display: flex;
+            justify-content: flex-end;
+            height: 34px;
+            align-content: center;
+        }
+
+        .newsitem1 .date2 P {
+            font-size: 14px;
+            font-weight: 200;
+            color: #aaa;
+        }
+
+        .newsitem1 p {
+            font-weight: 400;
+            color: #aaa;
+        }
+
+        .newsitem2 {
+            width: 30%;
+            padding: 0 1.5%;
+            margin-bottom: 50px;
+        }
+
+
+        .newsitem2 img {
+            width: 100%;
+        }
+
+        .newsitem2 h3 {
+            color: #000;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+
+        .newsitem2 .date1 p {
+            font-size: 14px;
+            font-weight: 200;
+            color: #aaa;
+
+        }
+
+        .newsitem2 .date2 {
+            width: 116px;
+            display: flex;
+            justify-content: flex-end;
+            height: 34px;
+            align-content: center;
+        }
+
+        .newsitem2 .date2 P {
+            font-size: 14px;
+            font-weight: 200;
+            color: #aaa;
+        }
+
+        .newsitem2 p {
+            font-weight: 400;
+            color: #aaa;
+        }
+
+
+        .newsitem3 {
+            width: 30%;
+            padding: 0 1.5%;
+            margin-bottom: 50px;
+        }
+
+
+        .newsitem3 img {
+            width: 100%;
+        }
+
+        .newsitem3 h3 {
+            color: #000;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+
+        .newsitem3 .date1 p {
+            font-size: 14px;
+            font-weight: 200;
+            color: #aaa;
+
+        }
+
+        .newsitem3 .date2 {
+            width: 116px;
+            display: flex;
+            justify-content: flex-end;
+            height: 34px;
+            align-content: center;
+        }
+
+        .newsitem3 .date2 P {
+            font-size: 14px;
+            font-weight: 200;
+            color: #aaa;
+        }
+
+        .newsitem3 p {
+            font-weight: 400;
+            color: #aaa;
+        }
+
+        .newsbutton {
+            display: flex;
+            justify-content: center;
+
+
+        }
+
+        .newsbutton button {
+            width: 180px;
+            height: 58px;
+            font-size: 14px;
+            text-transform: uppercase;
+            background-color: #0bf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            color: #fff;
         }
     </style>
 </head>
@@ -377,8 +649,10 @@
         </div>
 
         <div class="OurProject">
-            <div class="ProBack"></div>
-            <img src="manufax/ProjectBack.png" width="1498.89" height="950">
+
+            <div class="ProBack">
+                <img src="manufax/ProjectBack.png">
+            </div>
 
 
             <div class="logo">
@@ -461,43 +735,118 @@
                 correlating that were all involved in completing each separate project, then our productivity is
                 immense!</p>
             <img src="manufax/history.png" alt="">
-            <button style="background-color: aquamarine;">READ MORE</button>
+            <button style="background-color: aquamarine;"><a href="#">READ MORE</a> </button>
         </div>
 
         <div class="BuildingProject">
 
             <div class="BuildingProjectContainer">
 
-                <div class="commercialpic">
+                <div class="commercial">
                     <img src="manufax/commercial.jpeg" alt="">
-               
-                <div class="commercialtxt">
                     <h2>COMMERCIAL</h2>
-                </div> </div>
-
-                <div class="culturalPic">
-                    <img src="manufax/CULTURAL .jpeg" alt="">
-
-                    <div class="culturalPictxt">
-                        <h2>CULTURAL / LIFESTYLE</h2>
-                    </div>
                 </div>
 
-                <div class="datapic">
+                <div class="cultural">
+                    <img src="manufax/CULTURAL .jpeg" alt="">
+                    <h2>CULTURAL / LIFESTYLE</h2>
+                </div>
+
+                <div class="data">
                     <img src="manufax/DATA  .jpeg" alt="">
-               
-                <div class="datatxt">
                     <h2>DATA / TECHNOLOGY</h2>
-                </div> </div>
 
-                <div class="educationalpic">
+                </div>
+
+                <div class="educational">
                     <img src="manufax/EDUCATIONAL.jpeg" alt="">
-
-                <div class="educationaltxt">
                     <h2>EDUCATIONAL</h2>
-                </div></div>
+                </div>
 
+                <div class="government">
+                    <img src="manufax/GOVERNMENT.jpeg" alt="">
+                    <h2>GOVERNMENT / MILITARY</h2>
+                </div>
+
+                <div class="healthcare">
+                    <img src="manufax/HEALTHCARE.jpeg" alt="">
+                    <h2>HEALTHCARE</h2>
+                </div>
+
+                <div class="manufacturing">
+                    <img src="manufax/MANUFACTURING .jpeg" alt="">
+                    <h2>MANUFACTURING / INDUSTRIAL</h2>
+
+
+                </div>
+
+                <div class="warehouse">
+                    <img src="manufax/WAREHOUSE  .jpeg" alt="">
+                    <h2>WAREHOUSE / LOGISTICS</h2>
+
+                </div>
             </div>
+        </div>
+
+
+        <div class="RecentnewsCantainer">
+            <div class="newstitle">
+                <h2>RECCENT NEWS</h2>
+            </div>
+            <div class="allnewsitem">
+                <div class="newsitem1">
+                    <img src="manufax/news1.jpeg" alt="">
+                    <a href="#">
+                        <h3>FUTURE PROOFING HOSPITALS</h3>
+                    </a>
+                    <div class="date1">
+                        <p><i>"Posted by"<a href="#"> admin</a></i> </p>
+                    </div>
+                    <div class="date2">
+                        <p><i><a href="#">December 7,2018</a></i> </p>
+                    </div>
+                    <p>By improving the physical layout of hospitals and medical facilities, we can enhance and increase
+                        safety mechanisms, improve care, and…</p>
+                </div>
+
+                <div class="newsitem2">
+                    <img src="manufax/news2.jpeg" alt="">
+                    <a href="#">
+                        <h3>BIKE PARTS WAREHOUSE, DE</h3>
+                    </a>
+                    <div class="date1">
+                        <p><i>"Posted by"<a href="#"> admin</a></i> </p>
+                    </div>
+                    <div class="date2">
+                        <p><i><a href="#">December 7,2018</a></i> </p>
+                    </div>
+                    <p>Delaware proved to be a very friendly place to work at… While invited there for completing a
+                        mid-sized warehouse for…</p>
+
+
+                </div>
+
+                <div class="newsitem3">
+                    <img src="manufax/news3.jpeg" alt="">
+                    <a href="#">
+                        <h3>JOY HOTEL & CASINO</h3>
+                    </a>
+                    <div class="date1">
+                        <p><i>"Posted by"<a href="#"> admin</a></i> </p>
+                    </div>
+                    <div class="date2">
+                        <p><i><a href="#">December 7,2018</a></i> </p>
+                    </div>
+                    <p>This hotel & casino complex is our most recent completed building… The whole structure that took
+                        us 6
+                        months to…</p>
+
+                </div>
+            </div>
+            <div class="newsbutton">
+                <button><a href="#">SEE ALL NEWS</a></button>
+            </div>
+
 
         </div>
 
