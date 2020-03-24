@@ -4,53 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .top{
-            background-color: brown;
-        }
-        .bobywrap{
-            background-color:green;
+   <style>
+       ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+       }
+       ul.Language{
+        border: #ccc 1px solid;
+        display: inline-block;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px;
+       }
+       ul.Language li{
+        position: relative;
+        white-space: nowrap;
+        border-right: #ccc 1px solid;
+       }
 
-        }
-        .headleft {
-            display: inline-block;
-            background-color: darkmagenta;
-        } 
-        .headright li{
-            display: inline-block;
-            background-color: crimson;
-            justify-content: flex-end;
+       ul.Language> li:last-child {
+        border-right: none;}
+        .PAGEHEAD{
+            width: 100%;
+            height: 77PX;
+            background-color: aqua;
         }
 
-    </style>
+   </style>
 </head>
 <body>
-    <!-- 最上面 -->
-    <div class="top">
-        <img src="" alt="">
-        <li>My account</li>
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+    <div class="PAGEHEAD">
+        <div class="headright">
+            <i class="fas fa-user"></i>
+             <a href="#">My account</a>
+        </div>
+
+        <div class="headleft">
+            <ul class="Language">
+                <li><a href="#">USD</a></li>
+                <li><a href="#">EUR</a></li>
+                <li><a href="#">GBP</a></li>
+            </ul>
+        </div>
+      
     </div>
 
-    <div class="bobywrap">
-        <div class="cantainer" >
-            <div class="headleft" >
-                <img src=https://cdn.shopify.com/s/files/1/0303/0663/1739/files/logo_240x70_crop_center@2x.png?v=1580287569"" alt="">
-                <P>HEALTHY FOOD</P>
-            </div>
-            <div class="headright" >
-                <li>HOME</li>
-                <li>ABOUT US</li>
-                <li>COLLECTIONS</li>
-                <li>BLOG</li>
-                <li>SALE</li>
-                <li>CONTACT US</li>
-                
-            </div>
 
-    </div>
-    
+
+    <script src="https://kit.fontawesome.com/05de4949b0.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
