@@ -1,57 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   <style>
-       ul{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-       }
-       ul.Language{
-        border: #ccc 1px solid;
-        display: inline-block;
-        font-family: 'Open Sans', Arial, sans-serif;
-        font-size: 13px;
-       }
-       ul.Language li{
-        position: relative;
-        white-space: nowrap;
-        border-right: #ccc 1px solid;
-       }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
 
-       ul.Language> li:last-child {
-        border-right: none;}
-        .PAGEHEAD{
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul.Language {
+            border: #ccc 1px solid;
+            display: inline-block;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        ul.Language li {
+            position: relative;
+            white-space: nowrap;
+            border-right: #ccc 1px solid;
+        }
+
+        ul.Language>li:last-child {
+            border-right: none;
+        }
+
+        .PAGEHEAD {
             width: 100%;
             height: 77PX;
             background-color: aqua;
+            display: flex;
+            flex-direction: row;
         }
 
-   </style>
+        .headright {
+            padding-top: 30px;
+            padding-left: 250px;
+
+        }
+
+        .headleft {
+            padding-top: 30px;
+            padding-left: 750px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .headleftPIC i {
+            padding: 10px;
+        }
+
+        .headlist {
+            width: 100%;
+            height: 196px;
+            background-color: blue;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: sticky;
+            top: 0px;
+
+        }
+
+        .headlistleft {
+            margin-left: 200px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .headlistright a {
+            color: white;
+            padding-left: 10px;
+            text-decoration: none;
+        }
+
+        .headlistright {
+            display: flex;
+            align-items: center;
+            margin-right: 200px;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 667px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .swiperpic {
+            width: 65%;
+
+        }
+
+        .swiperpic img {
+            width: 100%;
+        }
+
+        .swipertxt {
+            margin-left: 20px;
+        }
+
+        .swipertxt h1 {
+            font-size: 2cm;
+            padding-top: 50px;
+            font-weight: lighter;
+
+        }
+
+        .swipertxt h2 {
+            color: yellow;
+            font-size: 1.5cm;
+            font-weight: bolder;
+        }
+
+        .swipertxt button {
+            margin-top: 50px;
+            background-color: black;
+            width: 200px;
+            height: 70px;
+            border: none;
+
+        }
+
+        .swipertxt a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .rowlist {
+            width: 100%;
+            height: 268px;
+            /* background-color: blueviolet; */
+            display: flex;
+            flex-direction: row;
+        }
+
+        .rowlist img {
+            width: 224px;
+            height: 237px;
+        }
+
+        .rowlist h2 {
+            width: 217px;
+            height: 35px;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="PAGEHEAD">
-        <div class="headright">
-            <i class="fas fa-user"></i>
-             <a href="#">My account</a>
+    <div class="wrap">
+        <div class="PAGEHEAD">
+            <div class="headright">
+                <i class="fas fa-user"></i>
+                <a href="#">My account</a>
+            </div>
+
+            <div class="headleft">
+                <div class="headleftPIC">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <ul class="Language">
+                    <li><a href="#">USD</a></li>
+                    <li><a href="#">EUR</a></li>
+                    <li><a href="#">GBP</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="headlist">
+            <div class="headlistleft">
+                <div class="logo">
+                    <a href="#">
+                        <h1>KARDONE</h1>
+                        <h3>HEALTLY FOOD</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="headlistright">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Sale </a></li>
+                <li><a href="#">Contact Us</a></li>
+            </div>
+        </div>
+        <div class="swiper">
+            <div class="swiperpic">
+                <img src="food/swiper.png" alt="">
+            </div>
+            <div class="swipertxt">
+                <h1>Fresh and <br>Delicious </h1>
+                <h2>All YEAR <br> ROUND!</h2>
+                <button><a href="#">READ MORE</a> </button>
+            </div>
         </div>
 
-        <div class="headleft">
-            <ul class="Language">
-                <li><a href="#">USD</a></li>
-                <li><a href="#">EUR</a></li>
-                <li><a href="#">GBP</a></li>
-            </ul>
+        <div class="rowlist">
+            <div class="item1">
+                <img src="food/Fresh Fruits.png" alt="">
+                <h2>Fresh Fruits</h2>
+            </div>
+            <div class="item2">
+                <img src="food/veggies.png" alt="">
+                <h2>Veggies</h2>
+            </div>
+
+            <div class="item3">
+                <img src="food/fish.png" alt="">
+                <h2>Fish</h2>
+            </div>
+
+            <div class="item4">
+                <img src="food/nuts.png " alt="">
+                <h2>Nuts&Seeds</h2>
+            </div>
+
+            <div class="item5">
+                <img src="food/bread.png" alt="">
+                <h2>Bread</h2>
+            </div>
+            <div class="item6">
+                <img src="food/dairy.png" alt="">
+                <h2>Dairy</h2>
+            </div>
         </div>
-      
+        <div class="shopifysection">
+            <div class="shopifysectionleft">
+                <img src="food/BestQuality .png" alt="">
+                <h2>Best Quality Proudust</h2>
+                <a href="#">Shop now</a>
+
+            </div>
+            <div class="shopifysectionrighttop">
+                <img src="food/Hot Deals.png" alt="">
+            </div>
+
+        </div>
+
+
+
+
     </div>
-
-
-
     <script src="https://kit.fontawesome.com/05de4949b0.js" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
