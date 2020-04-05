@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+    .row button{
+        background-color:cadetblue;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    .newnum button{
+        background-color: cornflowerblue;
+    }
+    .border{
+        width: 100%;
+        background-color: cadetblue;
+        margin: auto;
+    }
+    .row p{
+    width: 300px;
+    padding: 20px;
+    border: 1px solid black;
+     margin: auto;
+    }
+    
+    
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="border border-dark">
+                    <label for="see" class="my-5" id="range">0~100</label>
+                </div>
+                <div class="newnum">
+                    <button onclick="newnum()" id="random">產生數字</button>
+                </div>
+                <p id="input"></p>
+                <div>
+                    <button onclick="getnum(this)" class="btn">1</button>
+                    <button onclick="getnum(this)" class="btn">2</button>
+                    <button onclick="getnum(this)" class="btn">3</button>
+                </div>
+                <div>
+                    <button onclick="getnum(this)" class="btn">4</button>
+                    <button onclick="getnum(this)" class="btn">5</button>
+                    <button onclick="getnum(this)" class="btn">6</button>
+                </div>
+                <div>
+                    <button onclick="getnum(this)" class="btn">7</button>
+                    <button onclick="getnum(this)" class="btn">8</button>
+                    <button onclick="getnum(this)" class="btn">9</button>
+                </div>
+                <div>
+                    <button onclick="zeroing(this)" class="btn">X</button>
+                    <button onclick="getnum(this)" class="btn">0</button>
+                    <button onclick="check(this)" class="btn">V</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+    let ans;
+    var guessnum  = ''; //猜的數字
+    var min = 0; //最小0
+    var max = 100; //最大100
+
+//亂數
+    function newnum() {
+        ans = Math.floor(Math.random() * 101);
+        alert('你要的數字已產生')
+    }
+
+//取數字
+    function getnum(event) {
+        if (ans == '') {
+            alert('沒數字猜什麼');
+            guessnum = '';
+            input.innerHtml = guessnum;
+        } else {
+            guessnum += event.innerText;
+            input.innerText = guessnum;
+        }
+
+    }
+
+    //歸零
+    function zeroing(event) {
+        ans = '';
+        guessnum = '';
+        min = 0;
+        max = 100;
+        input.innerText = guessnum;
+        range.innerText = (min + ' ~ ' + max);
+    }
+    //判斷通關
+    function check(event) {
+        if (ans == undefined) {
+            alert('沒數字猜什麼');
+            guessnum = '';
+            input.innerText = guessnum;
+        } else {
+            if (Number(guessnum) <= min || Number(guessnum) >= max) {
+                alert("你超出範圍了喔")
+                guessnum = '';
+                input.innerText = guessnum;
+            } else if (guessnum == ans) {
+                max = guessnum;
+                min = guessnum;
+                alert('恭喜你答對!');
+                zeroing();
+                alert('重新再玩一次吧');
+            } else if (guessnum > ans) {
+                max = guessnum;
+            } else {
+                min = guessnum;
+            }
+            range.innerText = (min + ' ~ ' + max);
+            guessnum = '';
+        }
+    }
+
+
+</script>
+
+
+</html>

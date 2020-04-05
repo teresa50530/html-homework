@@ -69,7 +69,8 @@
             justify-content: space-between;
             position: sticky;
             top: 0px;
-            
+            z-index: 100;
+
 
         }
 
@@ -160,7 +161,7 @@
             width: 217px;
             height: 35px;
             text-align: center;
-            margin-top:-100px;
+            margin-top: -100px;
         }
 
         .shopifysection {
@@ -168,21 +169,80 @@
             height: 730px; */
             display: flex;
             flex-direction: row;
-            justify-content: center; 
+            justify-content: center;
             margin-top: 60px;
         }
-        .shopifysection img{
+
+        .shopifysection img {
             width: 100%;
         }
+        .hurryup{
+            margin-top: 25px;
+        }
+
         .shopifysectionright {
             display: flex;
             flex-direction: column;
             margin-left: 20px;
-           
+            
+
         }
- 
-        
-       
+
+        .bestqualitytxt {
+            position: absolute;
+            top: 1800px;
+            left: 170px;
+            white-space: nowrap;
+            z-index: 1;
+            /* background-color: pink; */
+            color: white;
+        }
+
+        .bestqualitytxt h2 {
+            font-size: 45px;
+        }
+
+        .bestqualitytxt a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            margin-top: 100px;
+        }
+        .hotdealstxt{
+            position: absolute;
+            top: 1450px;
+            left:700px;
+            white-space: nowrap;
+            z-index: 1;
+            color: white;
+        }
+        .hotdealstxt h2{
+            font-size: 45px;
+        }
+        .hotdealstxt a{
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .hurryuptxt{
+            position: absolute;
+            top: 1800px;
+            left:700px;
+            white-space: nowrap;
+            z-index: 1;
+            color: white;
+        }
+        .hurryuptxt h2{
+            font-size: 40px;
+        }
+        .hurryuptxt p{
+            margin-top: 10px;
+        }
+       .hurryuptxt a{
+        color: white;
+            font-size: 20px;
+            text-decoration: none;
+       }
     </style>
 </head>
 
@@ -269,30 +329,38 @@
         <div class="shopifysection">
             <div class="shopifysectionleft">
                 <img src="food/BestQuality .png" alt="">
-                <h2>Best Quality Proudust</h2>
-                <a href="#">Shop now</a>
+                <div class="bestqualitytxt">
+                    <h2>Best Quality Proudust</h2>
+                    <a href="#">Shop now</a>
+                </div>
             </div>
             <div class="shopifysectionright">
                 <div class="hotdeals">
                     <img src="food/Hot Deals.png" alt="">
-                    <h2>Hot Deals: CRAZY PRICE $2.99
-                    </h2>
-                    <a href="#">Shop now</a>
+                    <div class="hotdealstxt">
+                        <h2>Hot Deals:</h2> 
+                            <h2>CRAZY PRICE $2.99</h2>
+                        <a href="#">Shop now</a>
+                    </div>
                 </div>
 
                 <div class="hurryup">
                     <img src="food/hurrryup.png" alt="">
-                    <h2>HURRY UP! </h2>
-                    <p>Don't miss your chance to be the first!</p>
-                    <a href="#">Shop now</a>
+                    <div class="hurryuptxt">
+                        <h2>HURRY UP! </h2>
+                        <p>Don't miss your chance to be the first!</p>
+                        <a href="#">Shop now</a>
+                    </div>
+                </div>
+            </div></div>
+            <div class="carouselwap">
+                <div class="item">
+                    <img src="food/item1.png" alt="">
+                    <h2>P28 Foods Formulate.......</h2>
+                    <div class="price"></div>
+                    <div class="icon"></div>
                 </div>
             </div>
-
-        </div>
-
-
-
-
     </div>
     <script src="https://kit.fontawesome.com/05de4949b0.js" crossorigin="anonymous"></script>
 
