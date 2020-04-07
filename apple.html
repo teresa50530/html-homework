@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var body = document.getElementsByTagName('body')[0];
+        var div = document.createElement('div');
+
+        var products = {
+            ipone: [
+                { id: 'p01', color: '銀', price: '25000', storage: '64G', network: 'Wifi', pic: '02.png', url: '' },
+                { id: 'p02', color: '金', price: '27000', storage: '128G', network: 'Wifi', pic: '01.png', url: '' },
+                { id: 'p03', color: '太空灰', price: '28000', storage: '256G', network: 'Wifi', pic: '03.png', url: '' }
+            ],
+            ipad: {},
+            mac: {},
+            watch: {}
+        }
+
+        products.ipone.forEach(function (item) {
+            for (let a in item) {
+                if (a == 'pic') {
+                    div.innerHTML+=`<img src='${item[a]}'/>`;
+                }
+                else if(a=='url'){
+                    div.innerHTML+=`<a href="${item[a]}">c8 c8 </a>`;
+                }
+                else{
+                    div.innerHTML+=`${item[a]}`;
+                }
+            }
+        })
+
+        body.appendChild(div);
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
