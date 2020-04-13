@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>台灣縣市郵遞區號資訊列表</h1>
+    <div id="msg"></div>
+    <template id="templateTitle">
+        <tr>
+            <th>縣市</th>
+            <th>地區</th>
+            <th>路</th>
+        </tr>
+    </template>
+    <template id="templateRow">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+    <script>
+        let body = document.querySelector('body');
+        let table = document.createElement('table');
+        table.setAttribute("border", "2");
+        let thead = document.createElement('thead');
+        let tbody = document.createElement('tbody');
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        body.appendChild(table);
+
+
+        let taiwan = ''
+        window.onload = function () {
+            //STEP1
+            let xhr = new XMLHttpRequest;
+            //STEP3
+            xhr.onload = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    zipcodeArray = JSON.parse(this.responseText);
+                    //console.log(zipcodeArray);
+                    //console.log(this);
+
+                    let ZipCode = [];
+                    zipcodeArray.forEach((item) => {
+                        let obj = { City: item.CityName, Districts: [] };
+                        item.AreaList.forEach((area) => {
+                            obj.Districts.push({ District: area.AreaName, Zip: area.ZipCode });
+                        });
+                        ZipCode.push(obj);
+                    })
+                    // console.log(ZipCode);
+                    addThead();
+                    ZipCode.forEach(function (item) {
+                        addTbody(Object.values(item));
+                    })
+                    //老師的方法
+                    // let ZipCode=[];
+                    // zipcodeArray.forEach((item,index)=>{
+                    //     let_city=item.CityName;
+                    //     let_districts=[];
+                    //     item.AreaList.forEach((item,index)=>{
+                    //         _districts.push({District:item.AreaName,ZipCode:item.ZipCode});
+                    //     });
+                    //     let_cityObject={City:_city,District:_districts};
+                    //     ZipCode.push(_cityObject);
+                    // });
+                } else {
+                    msg.textContent = '發生錯誤，HTTP response代碼：' + xhr.status;
+                }
+
+                // document.getElementById("msg").innerHTML = this.responseText;
+            }
+            //STEP2
+            xhr.open("GET", "http://127.0.0.1:5501/TaiwanAddress/Address.json");
+            xhr.send();
+        }
+        //加/複製thed
+        function addThead() {
+            let templateTiltle = document.querySelector('#templateTitle');
+            let cloneContent = templateTiltle.content.cloneNode(true);
+            thead.appendChild(cloneContent);
+        }
+        function addTbody(rowArray) {
+            let templateRow = document.querySelector('#templateRow');
+
+            rowArray[1].forEach(function (item, index) {
+                let cloneContent = templateRow.content.cloneNode(true);
+                let tds = cloneContent.querySelectorAll('td');
+                tds[0].textContent = rowArray[0];
+                tds[1].textContent = item.District;
+                tds[2].textContent =item.Zip;
+                tbody.appendChild(cloneContent);
+            })
+
+
+            // rowArray.forEach(function (item, index) {
+            //     let cloneContent = templateRow.content.cloneNode(true);
+            //     let tds = cloneContent.querySelectorAll('td');
+            //     tds[index].textContent = rowArray[index];
+            //     tbody.appendChild(cloneContent);
+            // })
+
+        //     for (var i = 0; i <=zipcodeArray .eRow .length; i++) {
+                
+        //     var tr = document.createElement('tr');
+        //     for (y in zipcodeArray [i]) {
+        //         var td = document.createElement('td');
+        //         td.innerHTML =zipcodeArray [i][y];
+        //         tr.appendChild(td);
+
+        //     }
+        //     tbody.appendChild(tr);
+        // }
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
