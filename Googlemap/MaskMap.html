@@ -67,15 +67,15 @@
                     //console.log(jsonCode)
                     map.data.loadGeoJson('https://maskmap.azurewebsites.net/api/mask/getmaskstock');
                     map.data.setStyle(function (features) {
-                        //console.log(features)
-                        // if (features.properties('masksLeft') > 0 && ('childMasksLeft') > 0) {
-                        //     icon: '//example.com/path/to/image.png'
-                        //     fillColor: 'green'
-                        // }
-                        // else {
-                        //     icon: '//example.com/path/to/image.png'
-                        //     fillColor: 'green'
-                        // }
+                        // console.log(features)
+                        if (features.properties('masksLeft') > 0 && ('childMasksLeft') > 0) {
+                            icon: 'https://lh3.googleusercontent.com/proxy/hw9IFpp4Rj-p8T3QkCGCF40pgEBXf-9qFXuv6_n3gOgjYiOTRAdWARrwZflk9Yv3KewwerMmPpCMo7OSoMhMxaipMaEkYncpUZQS_1zlhMEkgYf-tg'
+                            fillColor: 'green'
+                        }
+                        else {
+                            icon: '//example.com/path/to/image.png'
+                            fillColor: 'green'
+                        }
                     });
 
 
