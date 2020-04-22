@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <h1>寶可夢圖鑑列表</h1>
+
+    <div id='container'>
+        <button id='addone' onclick="AddPokemon()">Click +1</button>
+        <button id='removeone' onclick="removePokemon()">Clear -1</button>
+        <button id='loadall' onclick="allPokemon()">Load All</button>
+    </div>
+
+
+    <!-- jquery版本 -->
+    <script>
+        let $container = $('#container');
+
+        $(window).on('load', function appendPokemon() {
+            let img = $('<img>');
+            img.attr('src', 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/079.png');
+            $('#container').append(img);
+        });
+
+        let index = 2;
+        //加的
+        function AddPokemon() {
+            let no = index.toString().padStart(3, '0');//不夠三位數的補0
+            let img = $('<img>');
+            img.attr('src', `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${no}.png`);
+            // img.on('click', removeImg);
+            $container.append(img);
+            index++;
+        }
+
+        //減少
+        function removePokemon() {
+            $('img').last().remove();
+            index--;
+
+        }
+        //跑出 全部
+        function allPokemon() {
+            for (index; index <= 890; index++) {
+                let fileName = index.toString().padStart(3, '0');
+                let img = $('<img>');
+                img.attr('src', `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`);
+                img.on('click', removeImg);
+                $container.append(img);
+            }
+        }
+        //點一下移除
+        function removeImg(event) {
+            container.removeChild(event.target);
+        }
+    </script>
+
+</body>
+
+</html>
