@@ -1,22 +1,250 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/05de4949b0.js" crossorigin="anonymous"></script>
+  <title> Calendar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+    .calendar {
+      width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .title {
+      position: relative;
+    }
+
+    h1,
+    h2 {
+      color: rgb(128, 184, 233);
+    }
+
+    table {
+      text-align: center;
+      margin: auto;
+    }
+
+    td {
+      width: 80px;
+      height: 70px;
+      border: 2px solid;
+    }
+
+    thead {
+      text-align: center;
+    }
+
+    tbody {
+      text-align: left;
+      vertical-align: top;
+    }
+
+    #prev {
+      position: absolute;
+      left: 150px;
+      top: 55px;
+      background-color: rgb(128, 184, 233);
+      border: none;
+    }
+
+    #next {
+      position: absolute;
+      left: 300px;
+      top: 55px;
+      background-color: rgb(128, 184, 233);
+      border: none;
+    }
+
+    .Weekdays {
+      background-color: rgb(128, 184, 233);
+      font-family: fantasy;
+    }
+
+    .weekend {
+      background-color: rgb(238, 134, 151);
+      font-family: fantasy;
+    }
+
+    #Newitinerary {
+      background-color: rgb(238, 134, 151);
+      position: absolute;
+      border: none;
+      left: 400px;
+      top: 55px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 行事曆的框架 -->
+  <div class="calendar">
+    <div class="title">
+      <h2 class="green " id="calendar-year">Year</h2>
+      <h1 class="green" id="calendar-title">Month</h1>
+
+      <button type="button" id="prev" class="btn btn-primary"><i class="fas fa-arrow-alt-circle-left"></i> </button>
+      <button type="button" id="next" class="btn btn-primary"><i class="fas fa-arrow-circle-right"></i></button>
+
+      <!-- 新增事件 -->
+      <button type="button" class="btn btn-primary" id="Newitinerary" data-toggle="modal" data-target="#exampleModal"
+        data-whatever="@mdo">新增行程</button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">新增行程</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">日期</label>
+                  <input type="date" class="form-control" id="recipient-name">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label" id="modal_event">行程</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+              <button type="button" class="btn btn-primary" id="save">新增</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 日期的部分 -->
+    <table>
+      <thead>
+        <tr>
+          <td class="weekend">SUN</td>
+          <td class="Weekdays">MON</td>
+          <td class="Weekdays">TUE</td>
+          <td class="Weekdays">WED</td>
+          <td class="Weekdays">THU</td>
+          <td class="Weekdays">FRI</td>
+          <td class="weekend">SAT</td>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+  </div>
+  <script>
+    var nowDate = new Date()
+
+    var year = nowDate.getFullYear();
+    var month = nowDate.getMonth();
+    var today = nowDate.getDate();
+    var tbody = document.getElementsByTagName('tbody')[0];
+
+
+    function adddays() {
+
+      //第一天星期幾
+      var firstDay = new Date(year, month, 1).getDay();
+      //取這個月有幾天
+      var dayOfMonth = new Date(year, month + 1, 0).getDate();
+      var day = 1;
+      //var rows = Math.ceil(dayOfMonth / 7);
+      for (let row = 0; row < 6; row++) {
+        let tr = document.createElement('tr');
+        for (let col = 0; col < 7; col++) {
+          let td = document.createElement('td');
+          if (row == 0 && col < firstDay) {
+
+          }
+          else {
+            if (day <= dayOfMonth) {
+              td.innerText = day;
+            }
+            day++;
+          }
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+      document.getElementById('calendar-title').innerHTML = month + 1;
+      document.getElementById('calendar-year').innerHTML = year;
+    }
+    adddays()
+
+    var prev = document.getElementById('prev');
+    // 上個月
+    prev.onclick = function () {
+      tbody.innerHTML = "";
+      month--;
+      if (month < 0) {
+        year--;
+        month = 11;
+
+      }
+      adddays();
+    }
+    //下個月
+    var next = document.getElementById('next');
+    next.onclick = function () {
+      tbody.innerHTML = "";
+      month++;
+      if (month > 11) {
+        year++;
+        month = 0;
+      }
+      adddays();
+    }
+
+
+    ///掛事件
+    //localStorage
+    let save = document.getElementById('save');
+    save.addEventListener('click', _save);
+
+    function _save() {
+      let _modal_event = document.getElementById('modal_event').value;
+    }
+
+
+
+
+
+
+
+  </script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>

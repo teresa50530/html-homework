@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="input" type="text">
+  <button onclick="SaveData()">Save</button>
+  <br>
+  <br>
+  <button onclick="LoadData()">Load</button>
+  <p id="text">123</p>
+</body>
+
+<script>
+
+  function SaveData()
+  {  
+    // let temp = document.getElementById('input').value;
+    let temp = {
+      Name: 'Jimmy',
+      CName: '秉登'
+    }
+    localStorage.setItem('Name', JSON.stringify(temp));
+  }
+
+  function LoadData()
+  {
+    let temp = JSON.parse(localStorage.getItem('Name'));
+    document.getElementById('text').innerText = temp.CName;
+  }
+
+  //---------------------------------------------------------------------
+
+  var dateA = new Date() //new 不帶參數 就是現在
+  console.log(dateA);
+  var date = new Date(2020, 3, 22); // 參數 年、月、日
+
+  console.log(date.getFullYear()); //年
+  console.log(date.getMonth()); //月 月份是從0開始
+  console.log(date.getDate()); //日
+  console.log(date.getDay()) //星期 禮拜天是 0
+
+  console.log(new Date(2020, 3, 500));
+  console.log(new Date(2020,4,0).getDate()); //這個月有幾天 = 下個月的第0天
+  
+</script>
+
+</html>
+//讀我在model打的東西
+//加入到行事曆上頭
