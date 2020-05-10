@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/05de4949b0.js" crossorigin="anonymous"></script>
+    <title> Calendar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .calendar {
+            width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .title {
+            position: relative;
+        }
+
+        h1,
+        h2 {
+            color: rgb(128, 184, 233);
+        }
+
+        table {
+            text-align: center;
+            margin: auto;
+        }
+
+        td {
+            width: 80px;
+            height: 70px;
+            border: 2px solid;
+        }
+
+        thead {
+            text-align: center;
+        }
+
+        tbody {
+            text-align: left;
+            vertical-align: top;
+        }
+
+        #prev {
+            position: absolute;
+            left: 150px;
+            top: 55px;
+            background-color: rgb(128, 184, 233);
+            border: none;
+        }
+
+        #next {
+            position: absolute;
+            left: 300px;
+            top: 55px;
+            background-color: rgb(128, 184, 233);
+            border: none;
+        }
+
+        .Weekdays {
+            background-color: rgb(128, 184, 233);
+            font-family: fantasy;
+        }
+
+        .weekend {
+            background-color: rgb(238, 134, 151);
+            font-family: fantasy;
+        }
+
+        #Newitinerary {
+            background-color: rgb(238, 134, 151);
+            position: absolute;
+            border: none;
+            left: 400px;
+            top: 55px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 行事曆的框架 -->
+    <div class="calendar">
+        <div class="title">
+            <h2 class="green " id="calendar-year">Year</h2>
+            <h1 class="green" id="calendar-title">Month</h1>
+
+            <button type="button" id="prev" class="btn btn-primary"><i class="fas fa-arrow-alt-circle-left"></i>
+            </button>
+            <button type="button" id="next" class="btn btn-primary"><i class="fas fa-arrow-circle-right"></i></button>
+        </div>
+        <!-- Modal input 增加事件-->
+        <div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="inputModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inputModalLabel">新增代辦事項</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="input-date" class="modal-body"><p>選擇日期</p>
+                        <input readonly id="date" type="text">
+                      
+                    </div>
+                    <div id="input-item" class="modal-body">
+                        <P>新增事項</P>
+                          <input id="input-todo-item" type="text">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="AddTodoItem()">新增</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 刪除修改事件 -->
+        <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoModalLabel">修改事件</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="info-area" class="modal-body">
+                        <input readonly id="info-date" type="text">
+                        <input id="info-todo-item" type="text">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="EditTodoItem()">修改</button>
+                        <button type="button" class="btn btn-primary" onclick="DeleteTodoItem()">刪除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 日期的部分 -->
+        <table>
+            <thead>
+                <tr>
+                    <td class="weekend">SUN</td>
+                    <td class="Weekdays">MON</td>
+                    <td class="Weekdays">TUE</td>
+                    <td class="Weekdays">WED</td>
+                    <td class="Weekdays">THU</td>
+                    <td class="Weekdays">FRI</td>
+                    <td class="weekend">SAT</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+        var nowDate = new Date()
+
+        var year = nowDate.getFullYear();
+        var month = nowDate.getMonth();
+        var today = nowDate.getDate();
+        var tbody = document.getElementsByTagName('tbody')[0];
+        // Storage.clear();
+        //先長出行事曆的畫面
+        function adddays() {
+            //清空tbody(才不會一直生表格)
+            tbody.innerHTML = '';
+            //第一天星期幾
+            var firstDay = new Date(year, month, 1).getDay();
+            //取這個月有幾天
+            var dayOfMonth = new Date(year, month + 1, 0).getDate();
+            var day = 1;
+            //var rows = Math.ceil(dayOfMonth / 7);
+            for (let row = 0; row < 6; row++) {
+                let tr = document.createElement('tr');
+                for (let col = 0; col < 7; col++) {
+                    let td = document.createElement('td');
+                    if (row == 0 && col < firstDay) {
+                    }
+                    else {
+                        if (day <= dayOfMonth) {
+                            td.innerText = day;
+                            //如果不是空的時候
+                            if (localStorage.getItem(`${year}-${month + 1}-${day}`) != null) {
+                                let todoList = JSON.parse(localStorage.getItem(`${year}-${month + 1}-${day}`));
+
+                                let ul = document.createElement('ul');
+
+                                todoList.forEach((element, index) => {
+                                    let li = document.createElement('li');
+                                    li.innerText = element.title;
+                                    li.setAttribute('index', index);
+
+                                    li.addEventListener('click', function (e) {
+                                        //防止冒泡
+                                        e.stopPropagation();
+
+                                        let index = e.target.getAttributeNode('index').value;
+                                        console.log(index);
+                                        currentIndex = index;
+                                        let date = `${year}-${month + 1}-${e.target.offsetParent.childNodes[0].data}`;
+                                        console.log(date);
+
+                                        let todoItem = JSON.parse(localStorage.getItem(date))[index];
+                                        console.log(todoItem);
+
+                                        document.querySelector('#info-area #info-date').value = `${date}`;
+                                        document.querySelector('#info-area #info-todo-item').value = `${todoItem.title}`;
+
+                                        $('#infoModal').modal('show');
+                                    });
+                                    ul.appendChild(li);
+                                });
+
+                                td.appendChild(ul);
+                            }
+
+                            //點日期跳出model
+                            td.addEventListener('click', function (e) {
+                                let targetTd;
+                                if (e.target.localName == 'li' || e.target.localName == 'ul') {
+                                    targetTd = e.target.offsetParent;
+                                } else {
+                                    targetTd = e.target;
+                                }
+
+                                document.querySelector('#inputModal #date').value = `${year}-${month + 1}-${targetTd.childNodes[0].data}`;
+                                $('#inputModal').modal('show');
+                            });
+                        }
+                        //     td.addEventListener('click', function (e) {
+                        //         document.querySelector('#input-area #date').value = `${year}-${month + 1}-${e.target.childNodes[0].data}`;
+                        //         $('#inputModal').modal('show')
+                        //     });
+                        // }
+                        day++;
+                    }
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            }
+            document.getElementById('calendar-title').innerHTML = month + 1;
+            document.getElementById('calendar-year').innerHTML = year;
+        }
+        adddays();
+
+        var prev = document.getElementById('prev');
+        // 上個月
+        prev.onclick = function () {
+            tbody.innerHTML = "";
+            month--;
+            if (month < 0) {
+                year--;
+                month = 11;
+            }
+            adddays();
+        }
+        //下個月
+        var next = document.getElementById('next');
+        next.onclick = function () {
+            tbody.innerHTML = "";
+            month++;
+            if (month > 11) {
+                year++;
+                month = 0;
+            }
+            adddays();
+        }
+
+
+        //掛事件ok
+        // 把字串存進 localStorage
+        function AddTodoItem() {
+            var date = document.querySelector('#input-date #date').value;//日期的值
+            var stroke = document.querySelector('#input-item #input-todo-item').value;//行程的值
+
+            let todoObj = { title: stroke };
+            let todolist = []
+            //如果是空白則直接加
+            if (localStorage.getItem(date) == null) {
+                todolist.push(todoObj);
+            }
+            // JSON.parse() 方法，將資料轉換回原本的格式
+            else {
+                let alreadyTodoList = JSON.parse(localStorage.getItem(date));
+                alreadyTodoList.push(todoObj)
+                todolist = alreadyTodoList;
+            }
+            //將 value 透過 JSON.stringify() 方法轉換成 JSON 格式的字串：
+            localStorage.setItem(date, JSON.stringify(todolist));//json轉成字串
+            adddays();
+        }
+
+        //修改
+
+        function EditTodoItem() {
+            let date = document.querySelector('#info-area #info-date').value;
+            let todoItem = document.querySelector('#info-area #info-todo-item').value;
+
+            let todoList = JSON.parse(localStorage.getItem(date));
+
+
+            todoList[currentIndex] = { title: todoItem };
+
+            localStorage.setItem(date, JSON.stringify(todoList));
+            adddays();
+        }
+        //刪除
+        function DeleteTodoItem() {
+            let date = document.querySelector('#info-area #info-date').value;
+
+            let todoList = JSON.parse(localStorage.getItem(date));
+
+            todoList.splice(currentIndex, 1);
+
+            localStorage.setItem(date, JSON.stringify(todoList));
+            adddays();
+        }
+
+
+
+
+
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

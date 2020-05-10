@@ -159,7 +159,7 @@
     var today = nowDate.getDate();
     var tbody = document.getElementsByTagName('tbody')[0];
 
-
+    //先長出行事曆的畫面
     function adddays() {
       //第一天星期幾
       var firstDay = new Date(year, month, 1).getDay();
@@ -172,11 +172,11 @@
         for (let col = 0; col < 7; col++) {
           let td = document.createElement('td');
           if (row == 0 && col < firstDay) {
-
           }
           else {
             if (day <= dayOfMonth) {
               td.innerText = day;
+            
             }
             day++;
           }
@@ -197,7 +197,6 @@
       if (month < 0) {
         year--;
         month = 11;
-
       }
       adddays();
     }
@@ -214,7 +213,7 @@
     }
 
 
-    //掛事件
+    //掛事件ok
     // 把字串存進 localStorage
     function SaveTodoItem() {
       var date = document.querySelector('#dateinput').value;//日期的值
@@ -222,16 +221,28 @@
 
       let todoObj = { title: stroke };
       let todolist = []
+      //如果是空白則直接加
       if (localStorage.getItem(date) == null) {
         todolist.push(todoObj);
       }
-      else {
+      // JSON.parse() 方法，將資料轉換回原本的格式
+      else { 
         let alreadyTodoList = JSON.parse(localStorage.getItem(date));
         alreadyTodoList.push(todoObj)
         todolist = alreadyTodoList;
       }
+      //將 value 透過 JSON.stringify() 方法轉換成 JSON 格式的字串：
       localStorage.setItem(date, JSON.stringify(todolist));//json轉成字串
     }
+
+    //要把存進localstorage拿出來(getitem.setitem.key) 
+    //再把它放到畫面上
+    function addPicture(){
+    localStorage.setItem(todolist,JSON.stringify())
+    let adddate =JSON.stringify.localStorage.getItem(date)
+    }
+
+    
 
     
 
