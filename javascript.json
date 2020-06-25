@@ -1,0 +1,82 @@
+{
+    "window-onload-api": {
+    "prefix": "xapi",
+    "body": [
+        "window.onload = function () {",
+        "    let xhr = new XMLHttpRequest;",
+        "    xhr.onload = function () {",
+        "        if (xhr.readyState == 4 && xhr.status == 200) {",
+        "",
+        "        } else {",
+        "            msg.textContent = '發生錯誤，HTTP response代碼:' + xhr.status;",
+        "        }",
+        "    }",
+        "    xhr.open('GET', '');",
+        "    xhr.send();",
+        "}"
+    ],
+        "description": "onload api"
+    },
+    "fetch-api":{
+        "prefix": "fetchapi",
+        "body": [
+            "fetch('url')",
+            ".then(response => response.text)",
+            ".then(text => {",
+            "",
+            "});",
+        ],
+        "description": "fetch api"
+    },
+    "for_loop":{
+        "prefix":"for",
+        "body":[
+            "for (let i = 0; i < max.length; i++) {",
+            "",
+            "}",
+        ],
+        "description": "for_loop"
+    },
+    "jqajax":{
+        "prefix":"jqajax",
+        "body":[
+            "$.ajax({",
+            "    url: 'url',",
+            "    data: 'JSON.stringify(data)',",
+            "    type: 'type',",
+            "    dataType: 'JSON',",
+            "    success: function (text){",
+            "        alert('Success');",
+            "        console.log(text);",
+            "    },",
+            "    error: function (xhr, ajaxOptions, thrownError){",
+            "        alert(xhr.status);",
+            "        alert(thrownError);",
+            "    }",
+            "})"
+        ],
+        "description":"jqajax"
+    },
+    "getJSON":{
+        "prefix":"getjson",
+        "body":[
+            "$.get('url', function(data, status){",
+            "     alert('Success');",
+            "     console.log(data);",    
+            "});",
+        ],
+        "description": "getJSON"
+    },
+    "postJSON":{
+        "prefix": "postjson",
+        "body": [
+            "$.post('url', {",
+            "        'JSON': 'JSON'",
+            "    },",
+            "    function(data, status){",
+            "        alert(status);",
+            "    });"
+        ],
+        "description": "postJSON"
+    },
+}

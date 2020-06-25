@@ -1,0 +1,16 @@
+@media screen and (min-width: 1200px) {
+    #card {
+        max-width: 20%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .riot_logo {
+        margin-left: 40px;
+    }
+}
+
+.name {
+    background-color: lightblue;
+}

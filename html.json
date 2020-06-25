@@ -1,0 +1,138 @@
+{
+	"fakepic": {
+		"prefix": "fakepic",
+		"body": [
+			"https://picsum.photos/300/200?random=8"
+		],
+		"description": "fakepic"
+	},
+	"bootstrap": {
+		"prefix": "bst",
+		"body": [
+			"<!doctype html>",
+			"<html lang=\"en\">",
+			"",
+			"    <head>",
+			"        <!-- Required meta tags -->",
+			"        <meta charset=\"utf-8\">",
+			"        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">",
+			"",
+			"        <!-- Bootstrap CSS -->",
+			"        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\"",
+			"            integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">",
+			"",
+			"        <title>Hello, world!</title>",
+			"    </head>",
+			"",
+			"    <body>",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"        <!-- Optional JavaScript -->",
+			"        <!-- jQuery first, then Popper.js, then Bootstrap JS -->",
+			"        <script src=\"http://code.jquery.com/jquery-3.4.1.min.js\"",
+			"            integrity=\"sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=\" crossorigin=\"anonymous\">",
+			"        </script>",
+			"        <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\"",
+			"            integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\">",
+			"        </script>",
+			"        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\"",
+			"            integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\">",
+			"        </script>",
+			"    </body>",
+			"",
+			"</html>"
+		],
+		"description": "bootstrap預設模板"
+	},
+	"bscard": {
+		"prefix": "bscard",
+		"body": [
+			"<div class=\"card\">",
+			"    <img src=\"https://picsum.photos/300/200?random=8\" class=\"card-img-top\" alt=\"...\">",
+			"    <div class=\"card-body\">",
+			"        <h5 class=\"card-title\">Card title</h5>",
+			"        <p class=\"card-text\">This is a wider card with supporting text below as a natural lead-in to",
+			"             additional content. This content is a little bit longer.</p>",
+			"        <button>Learn more</button>",
+			"   </div>",
+			"</div>"
+		],
+		"description": "bootstrapcard"
+	},
+	"fontawesome": {
+		"prefix": "fa",
+		"body": [
+			"<script src=\"https://kit.fontawesome.com/083e4ff28f.js\" crossorigin=\"anonymous\"></script>"
+		],
+		"description": "fontawesome script"
+	},
+	"facebookIcon": {
+		"prefix": "fi",
+		"body": [
+			"<i class=\"fab fa-facebook\"></i>"
+		],
+		"description": "facebookIcon"
+	},
+	"button": {
+		"prefix": "btn",
+		"body": [
+			"<button class=\"btn\"><a href=\"#\">Click</a></button>"
+		],
+		"description": "button預設"
+	},
+	"breadcrumb": {
+		"prefix": "breadcrumb",
+		"body": [
+			"<nav aria-label=\"breadcrumb\">",
+			"            <ol class=\"breadcrumb\">",
+			"                <li class=\"breadcrumb-item\"><a href=\"#\">Home</a></li>",
+			"                <li class=\"breadcrumb-item\"><a href=\"#\">Library</a></li>",
+			"                <li class=\"breadcrumb-item active\" aria-current=\"page\">Data</li>",
+			"            </ol>",
+			"        </nav>"
+		],
+		"description": "breadcrumb"
+	},
+	"BootstrapBreadCrumb": {
+		"prefix": "bsbr",
+		"body": [
+			"<nav aria-label=\"breadcrumb\">",
+			"            <ol class=\"breadcrumb\">",
+			"                <li class=\"breadcrumb-item\"><a href=\"#\">Home</a></li>",
+			"                <li class=\"breadcrumb-item\"><a href=\"#\">Library</a></li>",
+			"                <li class=\"breadcrumb-item active\" aria-current=\"page\">Data</li>",
+			"            </ol>",
+			"        </nav>"
+		],
+		"description": "BootstrapBreadCrumb"
+	},
+	"container-row": {
+		"prefix": "crow",
+		"body": [
+			"<div class=\"container\">",
+			"        <div class=\"row\">",
+			"            <div class=\"col\"></div>",
+			"        </div>",
+			"    </div>"
+		],
+		"description": "container&row"
+	},
+	"jquery-api": {
+		"prefix": "jqapi",
+		"body": [
+			"<script src=\"http://code.jquery.com/jquery-3.4.1.min.js\" integrity=\"sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=\" crossorigin=\"anonymous\"></script>"
+		],
+		"description": "jquery-api"
+	},
+	
+}

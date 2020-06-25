@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://kit.fontawesome.com/05de4949b0.js" crossorigin="anonymous"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -38,14 +39,20 @@
         .PAGEHEAD {
             width: 100%;
             height: 77PX;
-            background-color: aqua;
+            background-color: white;
             display: flex;
             flex-direction: row;
+            border-bottom: 5px solid #f9f9f9;
+        }
+
+        .PAGEHEAD a {
+            color: black;
+            text-decoration: none;
         }
 
         .headright {
             padding-top: 30px;
-            padding-left: 250px;
+            padding-left: 150px;
 
         }
 
@@ -63,7 +70,7 @@
         .headlist {
             width: 100%;
             height: 196px;
-            background-color: blue;
+            background-color: white;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -75,20 +82,22 @@
         }
 
         .headlistleft {
-            margin-left: 200px;
+            margin-left:150px;
             display: flex;
             align-items: center;
         }
 
         .logo a {
-            color: white;
+            color: black;
             text-decoration: none;
+            margin: 0 30px;
         }
 
         .headlistright a {
-            color: white;
-            padding-left: 10px;
+            color: black;
+         
             text-decoration: none;
+            margin: 0 30px;
         }
 
         .headlistright {
@@ -176,15 +185,17 @@
         .shopifysection img {
             width: 100%;
         }
-        .hurryup{
+
+        .hurryup {
             margin-top: 25px;
         }
 
         .shopifysectionright {
+
             display: flex;
             flex-direction: column;
             margin-left: 20px;
-            
+
 
         }
 
@@ -208,41 +219,186 @@
             text-decoration: none;
             margin-top: 100px;
         }
-        .hotdealstxt{
+
+        .hotdealstxt {
             position: absolute;
             top: 1450px;
-            left:700px;
+            left: 700px;
             white-space: nowrap;
             z-index: 1;
             color: white;
         }
-        .hotdealstxt h2{
+
+        .hotdealstxt h2 {
             font-size: 45px;
         }
-        .hotdealstxt a{
+
+        .hotdealstxt a {
             color: white;
             font-size: 20px;
             text-decoration: none;
         }
-        .hurryuptxt{
+
+        .hurryuptxt {
             position: absolute;
             top: 1800px;
-            left:700px;
+            left: 700px;
             white-space: nowrap;
             z-index: 1;
             color: white;
         }
-        .hurryuptxt h2{
+
+        .hurryuptxt h2 {
             font-size: 40px;
         }
-        .hurryuptxt p{
+
+        .hurryuptxt p {
             margin-top: 10px;
         }
-       .hurryuptxt a{
-        color: white;
+
+        .hurryuptxt a {
+            color: white;
             font-size: 20px;
             text-decoration: none;
-       }
+        }
+
+        .carouselwap {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .carouselwapitem {
+            margin: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .white {
+            width: 440px;
+            height: 275px;
+            background-color: rgb(240, 230, 230);
+            position: absolute;
+        }
+
+        .white button {
+            background-color: yellow;
+        }
+
+        .discount .white {
+            width: 569px;
+            height: 470px;
+        }
+
+        .discount h1 {
+            font-size: 72px;
+            margin-top: 50px;
+        }
+
+        .discount button {
+            margin: 35px 0 0 0;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 0;
+            border: 1px solid #ffe605;
+            background: #ffe605;
+            color: #000;
+            border-radius: 5px;
+            height: 40px;
+            width: 135px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .discountwrap img {
+            margin: 10% 0 10% 10%;
+        }
+
+        .onsaleimgwrap {
+            margin-left: 10%;
+            position: relative;
+        }
+
+        .onsaleimgwrap img {
+            max-width: 570px;
+            max-height: 970px;
+        }
+
+        .onsalecard h1 {
+            margin: 30px 0 50px;
+        }
+
+        .onsalecardtop {
+            margin: 20% 0;
+        }
+
+        .onsaleinfo {
+            position: absolute;
+
+            top: 70%;
+        }
+
+        .onsaleinfo h1 {
+            font-size: 50px;
+            color: aliceblue;
+            margin: 0 0 50px;
+        }
+
+        .onsaleinfo a {
+
+            font-size: 35px;
+            color: antiquewhite;
+        }
+
+        .FeaturedPostswrap h1 {
+            margin: 70px 0 50px 0;
+        }
+
+        .Postscard {
+            width: 350px;
+            height: 315px;
+            margin: 0 45px;
+        }
+
+        .Postscardinfo {
+            text-align: left;
+        }
+
+        .Postscardinfo a {
+            border: none;
+            color: black;
+            text-decoration: none;
+        }
+
+        .Postscards {
+            display: flex;
+            margin: 0 10px;
+        }
+
+        .footterwrap {
+            height: 403px;
+            background-color: #f9f9f9;
+            margin-top: 10%;
+            display: flex;
+        }
+
+        .footterwrapinfo {
+            margin: 30px 65px;
+            text-align: left;
+        }
+
+        .footterwrapinfo h1 {
+            margin: 50px 0;
+        }
+
+        .footterwrapinfo li {
+            margin: 10px 0;
+        }
+
+        .footterwrapinfo a {
+            border: none;
+            color: black;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -338,8 +494,8 @@
                 <div class="hotdeals">
                     <img src="Hot Deals.png" alt="">
                     <div class="hotdealstxt">
-                        <h2>Hot Deals:</h2> 
-                            <h2>CRAZY PRICE $2.99</h2>
+                        <h2>Hot Deals:</h2>
+                        <h2>CRAZY PRICE $2.99</h2>
                         <a href="#">Shop now</a>
                     </div>
                 </div>
@@ -352,15 +508,193 @@
                         <a href="#">Shop now</a>
                     </div>
                 </div>
-            </div></div>
-            <div class="carouselwap">
-                <div class="item">
+            </div>
+        </div>
+
+        <div class="carouselwap">
+            <h2>Featured Products</h2>
+            <div class="carouselwapitem">
+
+                <div class="item1">
                     <img src="item1.png" alt="">
-                    <h2>P28 Foods Formulate.......</h2>
-                    <div class="price"></div>
-                    <div class="icon"></div>
+                    <h4>P28 Foods Formulate.......</h4>
+                    <div class="price">$26.00 $20.00</div>
+                    <div class="icon">
+                        <button><i class="fas fa-shopping-cart">ADD TO CART</i></button>
+                        <button><i class="far fa-eye"></i></button>
+                        <button><i class="fas fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="item2">
+                    <img src="item2.png" alt="">
+                    <h4>P28 Foods Formulate.......</h4>
+                    <div class="price">$29.00-$36.00</div>
+                    <div class="icon">
+                        <button><i class="fas fa-shopping-cart">CHOOSE VARIANT</i></button>
+                        <button><i class="far fa-eye"></i></button>
+                        <button><i class="fas fa-heart"></i></button></div>
+                </div>
+                <div class="item3">
+                    <img src="item3.png" alt="">
+                    <h4>P28 Foods Formulate.......</h4>
+                    <div class="price">$12.00-$30.00</div>
+                    <div class="icon">
+                        <button><i class="fas fa-shopping-cart">CHOOSE VARIANT</i></button>
+                        <button><i class="far fa-eye"></i></button>
+                        <button><i class="fas fa-heart"></i></button></div>
+                </div>
+                <div class="item4">
+                    <img src="item4.png" alt="">
+                    <h4>P28 Foods Formulate.......</h4>
+                    <div class="price">$33.00 $20.00</div>
+                    <div class="icon">
+                        <button><i class="fas fa-shopping-cart">ADD TO CART</i></button>
+                        <button><i class="far fa-eye"></i></button>
+                        <button><i class="fas fa-heart"></i></button>
+                    </div>
                 </div>
             </div>
+
+
+            <div class="discountwrap">
+                <div class="discount" style="margin-left: 5%;">
+                    <div class="white">
+                        <h1>20% OFF</h1>
+                        <h1>Fresh Berries</h1>
+                        <button> SHOP NOW</button>
+                    </div>
+                </div>
+                <img src="discount.png" alt="" srcset="">
+            </div>
+
+            <div class="onsalewrap" style="display: flex;">
+                <div class="onsaleimgwrap">
+                    <img src="asset 59.jpg" alt="">
+                    <div class="onsaleinfo">
+                        <h1>Looking for something special?</h1>
+                        <a href="#">Shop now</a>
+                    </div>
+                </div>
+
+                <div class="onsalecard">
+                    <h1>ON sale</h1>
+                    <div class="onsalecardtop" style="display: flex;">
+                        <div class="item1">
+                            <img src="item1.png" alt="">
+                            <h4>P28 Foods Formulate.......</h4>
+                            <div class="price">$26.00 $20.00</div>
+                            <div class="icon">
+                                <button><i class="fas fa-shopping-cart">ADD TO CART</i></button>
+                                <button><i class="far fa-eye"></i></button>
+                                <button><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="item2">
+                            <img src="item2.png" alt="">
+                            <h4>P28 Foods Formulate.......</h4>
+                            <div class="price">$29.00-$36.00</div>
+                            <div class="icon">
+                                <button><i class="fas fa-shopping-cart">CHOOSE VARIANT</i></button>
+                                <button><i class="far fa-eye"></i></button>
+                                <button><i class="fas fa-heart"></i></button></div>
+                        </div>
+                    </div>
+                    <div class="onsalecardbottom" style="display: flex;">
+                        <div class="item3">
+                            <img src="item3.png" alt="">
+                            <h4>P28 Foods Formulate.......</h4>
+                            <div class="price">$12.00-$30.00</div>
+                            <div class="icon">
+                                <button><i class="fas fa-shopping-cart">CHOOSE VARIANT</i></button>
+                                <button><i class="far fa-eye"></i></button>
+                                <button><i class="fas fa-heart"></i></button></div>
+                        </div>
+                        <div class="item4">
+                            <img src="item4.png" alt="">
+                            <h4>P28 Foods Formulate.......</h4>
+                            <div class="price">$33.00 $20.00</div>
+                            <div class="icon">
+                                <button><i class="fas fa-shopping-cart">ADD TO CART</i></button>
+                                <button><i class="far fa-eye"></i></button>
+                                <button><i class="fas fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="FeaturedPostswrap">
+                <h1>Featured Posts</h1>
+                <div class="Postscards">
+                    <div class="Postscard">
+                        <img src="asset 60.png" alt="">
+                        <div class="Postscardinfo">
+                            <h4>29 January</h4>
+                            <a href="#">12 Heavenly Fruits and Honey</a>
+                            <p>Caffeine and sugar may give you an energy spike, but the crash that follows will leave
+                                you feeling even more tired than before. However, great...</p>
+                        </div>
+                    </div>
+                    <div class="Postscard">
+                        <img src="asset 61.png" alt="">
+                        <div class="Postscardinfo">
+                            <h4>29 January</h4>
+                            <a href="#">The Great Start of Your Weight</a>
+                            <p>Kids need energy for sports and play, so it’s important that they’re consuming a
+                                nutrient-dense snack about an hour before their activity that contains carbohydrates....
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Postscard">
+                        <img src="asset 62.png" alt="">
+                        <div class="Postscardinfo">
+                            <h4>29 January</h4>
+                            <a href="#">The Products that Help You Boost the Energy</a>
+                            <p>Hello, my dears! My name is mary and here, in my blog, I want to share with you my
+                                findings and useful thoughts about making...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footterwrap">
+                <div class="footterwrapinfo">
+                    <h1>Information</h1>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footterwrapinfo">
+                    <h1>My Account</h1>
+                    <ul>
+                        <li><a href="#">My Account</a> </li>
+                        <li><a href="#">Our History</a></li>
+                        <li><a href="#">Address</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                    </ul>
+                </div>
+                <div class="footterwrapinfo">
+                    <h1>Our Shop</h1>
+                    <ul>
+                        <li>Address</li>
+                        <li>4578 Marmora St, San Francisco D04 89GR</li>
+                    </ul>
+                    <ul>
+                        <li>Phone</li>
+                        <li>1-800-1234-567</li>
+                    </ul>
+                </div>
+                <div class="footterwrapinfo">
+                    <h1>Newsletter</h1>
+                    <p>Join our mailing list</p>
+                    <input type="enteer">
+                </div>
+            </div>
+
+
+        </div>
     </div>
     <script src="https://kit.fontawesome.com/05de4949b0.js" crossorigin="anonymous"></script>
 
