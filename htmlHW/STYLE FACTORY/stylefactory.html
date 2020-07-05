@@ -12,13 +12,22 @@
 
   <title>STYLE FACTORY</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 0;
+    }
+
     .title-btn {
-      margin-top: 15px;
+
       margin-left: 50px;
       position: relative;
       display: block;
-      width: 10px;
-      height: 10px;
       cursor: pointer;
       position: relative;
       top: 10px;
@@ -26,8 +35,8 @@
     }
 
     .title-btn span {
-      height: 4px;
-      width: 36px;
+      height: 2px;
+      width: 17px;
       background-color: #000;
       position: absolute;
       top: 5px;
@@ -46,6 +55,15 @@
       transform: translateY(8px);
     }
 
+    .navbar {
+      border-bottom: 1px solid #e9e9e9;
+      background-color: transparent !important;
+    }
+
+    .logo_container {
+      display: flex;
+    }
+
     .logo {
       margin-top: 5%;
       margin-left: 40%;
@@ -53,24 +71,23 @@
     }
 
     .social_app {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: end;
       -ms-flex-pack: end;
       justify-content: flex-end;
-      margin-top: 20px;
-  
+      margin-top: 3%;
+      margin-left: 24%;
+
     }
 
     .social_app i {
       margin-left: 20px;
+      color: gray;
     }
 
     .breadcrumb {
       background-color: white;
-      margin-left: 400px;
-      position: -webkit-sticky;
+      margin-left: 32%;
       position: sticky;
       top: 0;
     }
@@ -78,112 +95,675 @@
     .breadcrumb a {
       font-weight: 700;
       font-family: "Work Sans";
+      color: #000;
+      font-size: 14px;
     }
 
     .breadcrumb_container {
       margin-top: 1%;
       margin-left: -50px;
       margin-right: 15px;
+
+    }
+
+    .billboard img {
+      max-width: 100%;
+    }
+
+    .billboard {
+      position: relative;
+    }
+
+    .billboard_h3 h3 {
+      position: absolute;
+      top: 18%;
+      font-size: 33px;
+      max-width: 553px;
+      color: #fff;
+      border-top: 1px solid #fff;
+      margin-left: 3%;
+    }
+
+    .billboard_p p {
+      position: absolute;
+      top: 78%;
+      max-width: 410px;
+      float: right;
+      margin-right: 168px;
+      margin-top: 10px;
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: -0.07em;
+      margin-left: 59%;
+    }
+
+    .billboard .greeting_btn {
+      position: absolute;
+      top: 89%;
+      left: 43%;
+      text-transform: uppercase;
+      padding: 25px 40px;
+      background-color: white;
+      font-size: 18px;
+      border-radius: 0px;
+      border: none;
+    }
+
+    .showcase_container {
+      margin: 0 130px;
+    }
+
+    .showcase {
+      padding: 100px 0;
+    }
+
+    .row {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+    .custom_showcase {
+      text-align: center;
+    }
+
+    .custom_showcase a {
+      display: block;
+      position: relative;
+      border-top: 1px solid;
+      border-bottom: 1px solid #b9b9b9;
+      text-decoration: none;
+      padding: 37px 0 35px;
+      border-left: none;
+      border-right: none;
+
+    }
+
+    .custom_showcase h3 {
+      font-size: 60px;
+      font-family: 'Six Caps', sans-serif;
+      letter-spacing: 0.05em;
+      font-weight: normal;
+      margin: 15px 0;
+      font: bold 22px Work Sans;
+      text-transform: uppercase;
+    }
+
+    .custom_showcase p {
+      display: inline-block;
+      font-size: 17px;
+      text-transform: uppercase;
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      color: #333439;
+
+    }
+
+    .custom_showcase1 h3 {
+      color: #7dd0dc;
+    }
+
+    .custom_showcase2 h3 {
+      color: #d4bcb5;
+    }
+
+    .custom_showcase3 h3 {
+      color: #ffa396;
+    }
+
+    .homepage_promo_block {
+      position: relative;
+      width: 90%;
+      margin: 0 5%;
+      margin-bottom: 54px;
+    }
+
+    .homepage_promo_block img {
+      max-width: 100%;
+    }
+
+    .homepage_promo_text h2 {
+      font-size: 100px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      position: absolute;
+      top: 5%;
+      left: 41%;
+    }
+
+    .homepage_promo_text h3 {
+      position: absolute;
+      top: 30%;
+      left: 41%;
+      font-size: 115px;
+      font-weight: 200;
+      line-height: 100px;
+    }
+
+    .homepage_promo_text h4 {
+      position: absolute;
+      top: 55%;
+      left: 41%;
+      font-size: 40px;
+      font-weight: 300;
+      letter-spacing: 0;
+      margin-top: 10px;
+      padding-left: 5px;
+    }
+
+    .homepage_promo_text a {
+      position: absolute;
+      top: 80%;
+      left: 41%;
+      padding: 7px 19px;
+      background: transparent;
+      text-decoration: none;
+      border: 3px solid #181a1f;
+      font-size: 15px;
+      color: #181a1f;
+      font-family: 'Lato', sans-serif;
+      font-weight: bold;
+    }
+
+    .homepage_collection_card {
+      display: flex;
+      margin-left: 8%;
+    }
+
+    .homepage_collection_card a {
+      margin: 15px 0;
+      text-decoration: none;
+      border: 2px solid #181a1f;
+      padding: 7px 19px;
+      background: transparent;
+      border-radius: 0px;
+      font-size: 15px;
+      color: #181a1f;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .homepage_collections {
+      text-align: center;
+    }
+
+    .product_listing_main_card {
+      display: flex;
+      margin-left: 8%;
+    }
+
+    .product_listing_main_card .card {
+      padding: 30px;
+    }
+
+    .homepage_products {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .homepage_products h5 {
+      font-size: 15px;
+    }
+
+    .homepage_products p {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .page_heading {
+      margin: 60px 0;
+    }
+
+    .product_listing_main_card a {
+      margin: 15px 0;
+      text-decoration: none;
+      border: 2px solid #181a1f;
+      padding: 7px 19px;
+      background: transparent;
+      border-radius: 0px;
+      font-size: 15px;
+      color: #181a1f;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .new_label {
+      background-color: #ffa396;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-family: "Work Sans";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #ffffff;
+    }
+
+    .discount_label {
+      background-color: #7dd0dc;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-family: "Work Sans";
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #ffffff;
+    }
+
+    .blog_title {
+      display: flex;
+      text-align: center;
+      margin: 30px 50px;
+    }
+
+    .homepage_blog_container h2 {
+      margin: 30px 0;
+      font-size: 40px;
+      text-align: center;
+      letter-spacing: 0;
+    }
+
+    .homepage_blog_row img {
+      width: 90%;
+    }
+
+    .homepage_blog_post_content {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .blog_date {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .blog_title a {
+      font-weight: bold;
+      letter-spacing: 0;
+      color: #000;
+      font-size: 20px;
+    }
+
+    .blog_content {
+      margin-bottom: 32px;
+      font-size: 18px;
+    }
+
+    .blog_btn {
+      margin: 15px 0;
+      text-decoration: none;
+      border: 2px solid #181a1f;
+      padding: 7px 19px;
+      background: transparent;
+      border-radius: 0px;
+      font-size: 15px;
+      color: #181a1f;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .blog_icon a {
+      border: none;
+      color: #a3a3a3;
+    }
+    .instagramm_cantainer{
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
+  <div class="wrap">
+    <div class="container">
 
-  <head>
-    <nav class="navbar navbar-light bg-light">
-      <div class="title-btn  mr-auto p-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="dropdown-menu">
-        <label class="dropdown-header">Currency</label>
-        <a class="dropdown-item" href="#">My Account</a>
-        <a class="dropdown-item" href="#">Wishlist</a>
-        <a class="dropdown-item" href="#">Checkout</a>
-      </div>
-      <form class="form-inline">
-        <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-shopping-cart"></i></button>
-        <input class="form-control mr-sm-2" type="search" placeholder="Search store" aria-label="Search">
-        <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> </button>
-      </form>
-    </nav>
-    <div class="logo_container">
-      <div class="logo">
-        <a href="#"><img src="logo.png" alt="Style Factory.png"></a>
-      </div>
-      <div class="social_app">
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-pinterest"></i></a>
-        <a href="#"><i class="fab fa-google-plus-g"></i></a>
-      </div>
-    </div>
-    <div class="breadcrumb_container ">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb ">
-          <li class="breadcrumb-item"><a href="#" style="color: #FFA396;">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">PRODUCTS</a></li>
-          <li class="breadcrumb-item"><a href="#">BLOG</a></li>
-          <li class="breadcrumb-item"><a href="#">SALE</a></li>
-          <li class="breadcrumb-item"><a href="#">ABOUT US</a></li>
-          <li class="breadcrumb-item"><a href="#">CONTACT US</a></li>
-        </ol>
+      <nav class="navbar navbar-light bg-light">
+        <div class="title-btn  mr-auto p-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="dropdown-menu">
+          <label class="dropdown-header">Currency</label>
+          <a class="dropdown-item" href="#">My Account</a>
+          <a class="dropdown-item" href="#">Wishlist</a>
+          <a class="dropdown-item" href="#">Checkout</a>
+        </div>
+        <form class="form-inline">
+          <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-shopping-cart"></i></button>
+          <input class="form-control mr-sm-2" type="search" placeholder="Search store" aria-label="Search">
+          <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> </button>
+        </form>
       </nav>
-    </div>
-  </head>
-  <section class="best_picture">
-    <div class="arrow_down_nav_bar">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Style Factory</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">PRODUCTS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">BLOG</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">SALE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT US</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT US</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="logo_container">
+        <div class="logo">
+          <a href="#"><img src="logo.png" alt="Style Factory.png"></a>
+        </div>
+        <div class="social_app">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        </div>
+      </div>
+      <div class="breadcrumb_container ">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb ">
+            <li class="breadcrumb-item"><a href="#" style="color: #FFA396;">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">PRODUCTS</a></li>
+            <li class="breadcrumb-item"><a href="#">BLOG</a></li>
+            <li class="breadcrumb-item"><a href="#">SALE</a></li>
+            <li class="breadcrumb-item"><a href="#">ABOUT US</a></li>
+            <li class="breadcrumb-item"><a href="#">CONTACT US</a></li>
+          </ol>
         </nav>
-    </div>
-    <div class="billboard">
-      <div class="billboard_pic">
-          <img src="01.jpeg" alt="Style Factory">
       </div>
-      <div class="billboard_h3">
-          <h3>JOIN OUR DISCOUNT CLUB & SAVE 25% ON EVERYTHING!</h3>
-      </div>
-      <div class="billboard_p">
-          <p>We offer a broad assortment of the best and latest styles from the finest brands. Only at Style
+      </head>
+
+      <section class="best_picture">
+        <div class="billboard">
+          <div class="billboard_pic">
+            <img src="01.jpeg" alt="Style Factory">
+          </div>
+          <div class="billboard_h3">
+            <h3>JOIN OUR DISCOUNT CLUB & SAVE 25% ON EVERYTHING!</h3>
+          </div>
+          <div class="billboard_p">
+            <p>We offer a broad assortment of the best and latest styles from the finest brands. Only at Style
               Factory, you will find so many exclusive images, videos, customer reviews and expert tips to
               help
               you choose the perfect styles and colors.</p>
+          </div>
+          <a href="#" class="btn greeting_btn">join now -></a>
+        </div>
+      </section>
+
+      <div class="showcase_container">
+        <div class="showcase">
+          <div class="row">
+            <div class="col-sm-4 custom_showcase custom_showcase1">
+              <a href="#">
+                <h3>new arrivals</h3>
+                <p>see our latest must-haves>></p>
+              </a>
+            </div>
+            <div class="col-sm-4 custom_showcase custom_showcase2">
+              <a href="#">
+                <h3>we love<i class="fa fa-heart-o" aria-hidden="true"></i></h3>
+                <p>check out stylish favorites>></p>
+              </a>
+            </div>
+            <div class="col-sm-4 custom_showcase custom_showcase3">
+              <a href="#">
+                <h3>free shipping</h3>
+                <p>on all 2016 collection>></p>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <button class="Join_us_btn"><a href="#">JOIN NOW</a></button>
-  </div>
-</section>
+      <div class="homepage_promo_block">
+        <img src="asset 55.png" alt="">
+        <div class="homepage_promo_text">
+          <h2>Hair</h2>
+          <h3>Extensions</h3>
+          <h4>add length &amp; volume in seconds</h4>
+          <a href="/collections/hair-health-treatment" class="btn homepage_promo_btn">Read More</a>
+        </div>
+      </div>
 
+
+      <div class="main_content">
+        <div class="homepage_collections">
+          <h2 class="page_heading">
+            <span class="wrap-1">BROWSE </span>
+            <span class="wrap-2">OUR CATEGORIES </span>
+          </h2>
+          <div class="homepage_collection_card">
+            <!-- 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="asset 9.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Men’s hair care</h5>
+
+                <a href="#" class="btn btn-primary">7 products</a>
+              </div>
+            </div>
+
+
+            <!-- 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="asset 10.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hair styling</h5>
+                <a href="#" class="btn btn-primary">13 products</a>
+              </div>
+            </div>
+
+            <!-- 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="asset 11.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hair health treatment</h5>
+                <a href="#" class="btn btn-primary">9 products</a>
+              </div>
+            </div>
+
+            <!-- 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="asset 12.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Hair care for kids</h5>
+                <a href="#" class="btn btn-primary">7 products</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="homepage_products_1">
+      <div class="homepage_products">
+        <h2 class="page_heading">
+          <span class="wrap-1">PRODUCTS </span>
+          <span class="wrap-2">ON SALE</span>
+        </h2>
+        <div class="product_listing_main_card">
+          <!-- 1 -->
+          <div class="card" style="width: 18rem;">
+            <img src="asset 13.png" class="card-img-top" alt="...">
+            <span class="new_label">NEW</span>
+            <div class="card-body">
+              <h5 class="card-title">Argan Oil Hair Mask</h5>
+              <p>$60.00</p>
+              <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></a>
+            </div>
+          </div>
+
+
+          <!-- 1 -->
+          <div class="card" style="width: 18rem;">
+            <img src="asset 15.png" class="card-img-top" alt="...">
+            <span class="new_label">NEW</span>
+            <span class="discount_label">-10%</span>
+            <div class="card-body">
+              <h5 class="card-title">Garnier Fructis</h5>
+              <p>$60.00</p>
+              <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></a>
+            </div>
+          </div>
+
+          <!-- 1 -->
+          <div class="card" style="width: 18rem;">
+            <img src="asset 17.png" class="card-img-top" alt="...">
+            <span class="new_label">NEW</span>
+            <div class="card-body">
+              <h5 class="card-title">Herbal Essences</h5>
+              <p>$60.00</p>
+              <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></a>
+            </div>
+          </div>
+
+          <!-- 1 -->
+          <div class="card" style="width: 18rem;">
+            <img src="asset 19.png" class="card-img-top" alt="...">
+            <span class="new_label">NEW</span>
+            <span class="discount_label">-10%</span>
+            <div class="card-body">
+              <h5 class="card-title">L'Oreal Paris Studio Line</h5>
+              <p>$60.00</p>
+              <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="homepage_blog">
+      <div class="homepage_blog_container">
+        <h2 class="page_heading"><span class="wrap-1">See </span><span class="wrap-2">what's new on our Blog </span>
+        </h2>
+        <div class="row homepage_blog_row">
+          <!-- 這1個 -->
+          <div class="col-sm-4 homepage_blog_post ">
+            <div class="homepage_blog_post_content">
+              <p class="blog_date">14 January</p>
+              <div class="post_info">
+                <p class="blog_author"><span>Posted by</span> David Braun 2 Comments</p>
+
+              </div>
+              <div class="article_img">
+                <img src="asset 21.png" alt="">
+              </div>
+              <h3 class="blog_title"><a href="#">You bring beauty to the world</a></h3>
+              <div class="blog_content">Coco Chanel said that a woman who cuts her hair is about...</div>
+              <a class="btn blog_btn" href="#">Read more</a>
+            </div>
+          </div> <!-- 到這 -->
+          <!-- 這1個 -->
+          <div class="col-sm-4 homepage_blog_post ">
+            <div class="homepage_blog_post_content">
+              <p class="blog_date">14 January</p>
+              <div class="post_info">
+                <p class="blog_author"><span>Posted by</span> David Braun 0 Comments</p>
+
+              </div>
+              <div class="article_img">
+                <img src="asset 22.png" alt="">
+              </div>
+              <h3 class="blog_title"><a href="#">You bring beauty to the world</a></h3>
+              <div class="blog_content">Coco Chanel said that a woman who cuts her hair is about...</div>
+              <a class="btn blog_btn" href="#">Read more</a>
+            </div>
+          </div> <!-- 到這 -->
+          <!-- 這1個 -->
+          <div class="col-sm-4 homepage_blog_post ">
+            <div class="homepage_blog_post_content">
+              <p class="blog_date">14 January</p>
+              <div class="post_info">
+                <p class="blog_author"><span>Posted by</span> David Braun 0 Comments</p>
+
+              </div>
+              <div class="article_img">
+                <img src="asset 23.png" alt="">
+              </div>
+              <h3 class="blog_title"><a href="#">You bring beauty to the world</a></h3>
+              <div class="blog_content">Coco Chanel said that a woman who cuts her hair is about...</div>
+              <a class="btn blog_btn" href="#">Read more</a>
+            </div>
+          </div> <!-- 到這 -->
+        </div>
+      </div>
+
+
+      <div class="homepage_products_1">
+        <div class="homepage_products">
+          <h2 class="page_heading">
+            <span class="wrap-1">FEATURED </span>
+            <span class="wrap-2">PRODUCTS </span>
+          </h2>
+          <div class="product_listing_main_card">
+            <!-- 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="asset 24.png" class="card-img-top" alt="...">
+              <span class="new_label">NEW</span>
+              <span class="discount_label">-38%</span>
+              <div class="card-body">
+                <h5 class="card-title">Infiniti Pro by Conair Hair Designer 3 in 1 Sty...</h5>
+                <p>$50.00</p>
+                <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></a>
+                <div class="blog_icon">
+                  <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a><a href="#"><i
+                      class="fa fa-eye" aria-hidden="true"></i></a>
+                    </div>
+              </div>
+            </div>
+
+
+            <!-- 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="asset 26.png" class="card-img-top" alt="...">
+              <span class="new_label">NEW</span>
+              <div class="card-body">
+                <h5 class="card-title">InStyler Ionic Styler Pro Ceramic Flat Iron</h5>
+                <p>$66.00</p>
+                <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></a>
+                <div class="blog_icon">
+                  <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a><a href="#"><i
+                      class="fa fa-eye" aria-hidden="true"></i></a>
+                    </div>
+              </div>
+            </div>
+
+            <!-- 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="asset 28.png" class="card-img-top" alt="...">
+              <span class="new_label">NEW</span>
+              <div class="card-body">
+                <h5 class="card-title">Jose Eber Wet & Dry Flat Iron Straightener</h5>
+                <p>$88.00</p>
+                <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></a>
+                <div class="blog_icon">
+                  <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a><a href="#"><i
+                      class="fa fa-eye" aria-hidden="true"></i></a>
+                    </div>
+              </div>
+            </div>
+
+            <!-- 1 -->
+            <div class="card" style="width: 18rem;">
+              <img src="asset 30.png" class="card-img-top" alt="...">
+              <span class="new_label">NEW</span>
+              <span class="discount_label">-14%</span>
+              <div class="card-body">
+                <h5 class="card-title">Glide Thru Detangler Hair Comb or Brush</h5>
+                <p>$56.00</p>
+                <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</span></a>
+                <div class="blog_icon">
+                  <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a><a href="#"><i
+                      class="fa fa-eye" aria-hidden="true"></i></a>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div class="instagramm">
+  <div class="instagramm_cantainer">
+    <h2 class="page_heading"><span class="wrap-1">follow </span><span class="wrap-2">us on instagram </span></h2>
+  </div>
+</div>
+
+
+
+
+
+    </div>
+  </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
