@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
@@ -27,67 +29,62 @@
     <div id="map"></div>
 
     <script>
-        var map;
-
+      var map;
+        var Markers;
         function initMap() {
-            var position = {
-                lat: 24.7571782,
-                lng: 120.9523905,
-            };
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 18,
-                center: position
-            });
-            var marker = new google.maps.Marker({
-                position: position,
-                map: map
-            });
+            var chu = { lat: 24.757133, lng: 120.952264 };
+            var map = new google.maps.Map(
+                document.getElementById('map'), { zoom: 15, center: chu });
+            chumarker = new google.maps.Marker({ position: chu, map: map, });
 
-            GetData();
-        }
-        let taiwan = ''
-        function GetData() {
-            //STEP1
-            let xhr = new XMLHttpRequest;
-            //STEP3
-            xhr.onload = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
+            $.ajax({
+                type: 'Get',
+                url: 'https://findmasks.herokuapp.com/places',
+                // dataType: 'json',
+                success: function (response) {
+                    let longitude = [];   //經度(大)
+                    let latitude = [];    //緯度(小)               
 
-                    json = JSON.parse(this.responseText);
-
-                    // console.log(typeof json );
-
-                    //經緯度口罩數量
-
-                    let jsonCode = [];
-                    json.features.forEach((item) => {
-                        let obj = { coordinates: item.geometry.coordinates, masksLeft: item.properties.masksLeft, childMasksLeft: item.properties.childMasksLeft };
-                        jsonCode.push(obj);
-                    })
-                    //console.log(jsonCode)
-                    map.data.loadGeoJson('https://maskmap.azurewebsites.net/api/mask/getmaskstock');
-                    map.data.setStyle(function (features) {
-                        // console.log(features)
-                        if (features.properties('masksLeft') > 0 && ('childMasksLeft') > 0) {
-                            icon: 'https://lh3.googleusercontent.com/proxy/hw9IFpp4Rj-p8T3QkCGCF40pgEBXf-9qFXuv6_n3gOgjYiOTRAdWARrwZflk9Yv3KewwerMmPpCMo7OSoMhMxaipMaEkYncpUZQS_1zlhMEkgYf-tg'
-                            fillColor: 'green'
+                    // debugger;
+                    for (var i = 0; i < response.features.length; i++) {
+                        longitude[i] = response.features[i].geometry.coordinates[1];
+                        latitude[i] = response.features[i].geometry.coordinates[0];
+                        if (response.features[i].properties.masksLeft || response.features[i].properties.childMasksLeft == 0) {
+                            Markers = new google.maps.Marker({
+                                position: { lat: longitude[i], lng: latitude[i] },
+                                map: map,
+                                icon: {
+                                    url: 'yes.jpg',
+                                    scaledSize: new google.maps.Size(30, 30)
+                                }
+                            });
                         }
                         else {
-                            icon: '//example.com/path/to/image.png'
-                            fillColor: 'green'
+                            Markers = new google.maps.Marker({
+                                position: { lat: longitude[i], lng: latitude[i] },
+                                map: map,
+                                icon: {
+                                    url: 'cry.jpg',
+                                    scaledSize: new google.maps.Size(40, 40)
+                                }
+                            });
                         }
-                    });
+                    
+                    }
+                    console.log(longitude[i]);
+                    debugger;
+                    // var position= { lat: latitude[i], lng: longitude[i] };
+                    // var map = new google.maps.Map(
+                    //     document.getElementById('map'), { zoom: 15, center: position});
+                    // var marker = new google.maps.Marker({ position: position, map:map });
 
-
-                } else {
-                    msg.textContent = '發生錯誤，HTTP response代碼：' + xhr.status;
+                    // console.log(response);
+                    // debugger;
                 }
-            }
-            xhr.open("GET", "https://maskmap.azurewebsites.net/api/mask/getmaskstock");
-            xhr.send();
+            });
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlKWP4uWjQIR3WDAWLAu6rUhBfc3_ppag&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbfHLwbvXeyocM5yOgpm0rl8n1eoQJDtI&callback=initMap"
         async defer></script>
 </body>
 
